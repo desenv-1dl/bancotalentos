@@ -1,0 +1,351 @@
+## Instalação do Ambiente ##
+
+- Banco de Dados
+- Composer
+- Git
+- Laravel
+- Postman
+
+## Criando um novo projeto Laravel ##
+
+Dentro do diretório onde deseja criar o novo projeto
+
+laravel new meu-projeto
+
+Os arquivos serão baixados para dento de um diretório com o nome do novo projeto, 
+entre neste diretório para atualizar os pacotes
+
+composer update
+
+## Mudando o Namespace da aplicação ##
+
+php artisan app:name MeuNamespace
+
+## Configurando o Banco de Dados no arquivo .env ##
+
+Abra o arquivo .env altere as configurações abaixo
+
+DB_CONNECTION=driver-banco (pgsql, mysql, sqlite, ...)
+DB_HOST=servidor-de-banco-de-dados (localhost, mysql0005.licaweb.com.br, ...)
+DB_DATABASE=nome-do-banco-de-dados 
+DB_USERNAME=nome-do-usuario
+DB_PASSWORD=senha-de-acesso
+
+## Trabalhando com o padrão Repository ##
+
+
+Instale o pacote para uso do padrão Repository
+
+https://github.com/andersao/l5-repository
+
+composer require prettus/l5-repository
+
+Abra o arquivo config/app.php e adicione 
+
+Prettus\Repository\Providers\RepositoryServiceProvider::class,
+
+Dentro do array providers
+
+'providers' => [
+    ...
+    Prettus\Repository\Providers\RepositoryServiceProvider::class,
+],
+
+Publique as configurações
+
+php artisan vendor:publish
+
+Será criado o arquivo config/repository.php, altere o rootNamespace no array generator com o nome do seu Namespace
+
+    'generator'=>[
+        'basePath'=>app_path(),
+        'rootNamespace'=>'MeuNamespace\\',
+        'paths'=>[
+            'models'=>'Entities',
+            'repositories'=>'Repositories',
+            'interfaces'=>'Repositories',
+            'transformers'=>'Transformers',
+            'presenters'=>'Presenters'
+        ]
+    ]
+
+	
+Em app, crie as pastas
+
+Entities
+Repositories
+Transformers
+Presenters
+Services
+Validatios
+
+Instale o pacote de Validação
+
+https://github.com/andersao/laravel-validator
+
+composer require prettus/laravel-validation
+
+## Laravel PostGis ##
+
+https://github.com/phaza/laravel-postgis
+
+Instale o pacote Phaza Laravel PostGis
+
+composer require phaza/laravel-postgis
+
+Abra o arquivo config/app.php e adicione 
+
+Phaza\LaravelPostgis\DatabaseServiceProvider::class,
+
+Dentro do array providers
+
+'providers' => [
+    ...
+	Phaza\LaravelPostgis\DatabaseServiceProvider::class,
+],
+
+## Engenharia reversa para criar migrations Laravel 5 ##
+
+https://github.com/Xethron/migrations-generator
+
+Adicione as bibliotecas no  require-dev do composer.json
+
+"require-dev": {
+	...
+    "xethron/migrations-generator": "dev-l5",
+    "way/generators": "dev-feature/laravel-five-stable",
+}
+
+Adicione o repositório
+
+"repositories": [
+    {
+        "type": "git",
+        "url": "git@github.com:jamisonvalenta/Laravel-4-Generators.git"
+    }
+]
+
+ATENÇÂO
+
+Crie ou adicione seu token do gihub para autenticar seu composer
+
+https://github.com
+
+https://github.com/settings/tokens
+
+composer config -g github-oauth.github.com SEU_TOKEN
+
+Abra o arquivo config/app.php e adicione 
+
+Way\Generators\GeneratorsServiceProvider::class,
+Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class,
+
+Dentro do array providers
+
+'providers' => [
+    ...
+	Way\Generators\GeneratorsServiceProvider::class,
+    Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class,
+],
+
+Para gerar as migartions
+
+php artisan migrate:generate
+
+## OAuth2 Laravel ##
+
+https://github.com/lucadegasperi/oauth2-server-laravel
+
+Instale o pacote OAuth2 Laravel 5
+
+https://github.com/lucadegasperi/oauth2-server-laravel/wiki/Laravel-5-Installation
+
+composer require lucadegasperi/oauth2-server-laravel
+
+Abra o arquivo config/app.php e adicione no array Providers
+
+'providers' => [
+    ...
+	LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider::class,
+	LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider::class,
+],
+
+e adicione no array Aliases
+
+'aliases' => [
+    ...
+	'Authorizer' => LucaDegasperi\OAuth2Server\Facades\Authorizer::class,
+],
+
+Abra o arquivo app/Http/Kernel.php e adicione no array $middleware 
+
+protected $middleware = [
+        ...
+        \LucaDegasperi\OAuth2Server\Middleware\OAuthExceptionHandlerMiddleware::class
+    ];
+
+e adicione no array $routeMiddleware
+
+protected $routeMiddleware = [
+        ...
+        'oauth' => \LucaDegasperi\OAuth2Server\Middleware\OAuthMiddleware::class,
+		'oauth-user' => \LucaDegasperi\OAuth2Server\Middleware\OAuthUserOwnerMiddleware::class,
+		'oauth-client' => \LucaDegasperi\OAuth2Server\Middleware\OAuthClientOwnerMiddleware::class,
+		'check-authorization-params' => \LucaDegasperi\OAuth2Server\Middleware\CheckAuthCodeRequestMiddleware::class
+    ];
+
+## Alterar CSRF Token ##
+
+Abra o arquivo app/Http/Kernel.php e remover no array $middleware 
+
+protected $middleware = [
+        ...
+        \GeoDoc\Http\Middleware\VerifyCsrfToken::class,
+    ];
+	
+e adicione no array $routeMiddleware
+
+protected $routeMiddleware = [
+        ...
+                'csrf' => \GeoDoc\Http\Middleware\VerifyCsrfToken::class,
+
+    ];
+
+--------
+OBS: Geodoc é o nomeme do namespace alterado com o comando 
+	
+php artisan app:name GeoDoc 
+--------
+
+Publique as configurações
+
+php artisan vendor:publish
+
+Será criado o arquivo config/oauth2.php
+
+Para gerar as migartions
+
+php artisan migrate:generate
+
+No arquivo de configuração config/oauth2.php adicione os itens abaixo no grant_types 
+
+    'grant_types' => [
+        'password' => [
+            'class' => \League\OAuth2\Server\Grant\PasswordGrant::class,
+            'callback' => '\CodeProject\OAuth\Verifier@verify',
+            'access_token_ttl' => 36007
+        ],
+        'refresh_token' => [
+            'class' => \League\OAuth2\Server\Grant\RefreshTokenGrant::class,
+            'access_token_ttl' => 3600,
+            'refresh_token_ttl' => 36000
+        ]
+    ],
+
+Crie uma pasta chamada OAuth dentro da pasta app
+
+Crie uma classe chamada Veirifier dento da pasta app/OAuth
+
+namespace CodeProject\OAuth;
+
+use Auth;
+
+
+class Verifier
+{
+    public function verify($username, $password)
+    {
+        $credentials = [
+            'email'    => $username,
+            'password' => $password,
+        ];
+
+        if (Auth::once($credentials)) {
+            return Auth::user()->id;
+        }
+
+        return false;
+    }
+}
+
+Adicione um registro na tabela oauth_clientes
+
+INSERT INTO oauth_clients  VALUES ('appid1', 'secret', 'AngularApp', now(), now());
+
+OBS>: o ID, appid1, geralmente é um md5 ou hash
+
+Crie uma factory para o usuário de teste em UserTableSeeder.php e rode esta factory no tinker
+
+factory(\CodeProject\Entities\User::class)->create([
+            'name' => 'Copeiro',
+            'email' => 'marciocar@gmail.com',
+            'password' => bcrypt(123456),
+            'remember_token' => str_random(10)
+        ]);
+
+Ajuste a rota em app/Http/routes.php
+
+Route::post('oauth/access_token', function() {
+    return Response::json(Authorizer::issueAccessToken());
+});
+
+Alterar config/Auth.php para novo caminho 
+
+'model' => CodeProject\User::class,
+
+para 
+
+'model' => CodeProject\Entities\User::class,
+
+## Autenticando e ajustando as Rotas com OAuth2 ##
+
+Altere o arquivo de rotas app/Http/routes.php
+
+Exemplo com as rotas ajustadas e agupadas
+
+Route::post('oauth/access_token', function() {
+    return Response::json(Authorizer::issueAccessToken());
+});
+
+Route::group(['middleware' => 'oauth'], function (){
+
+    # Client #
+    Route::resource('client', 'ClientController', ['except' => ['create', 'edit']]);
+
+    # Project #
+    Route::resource('project', 'ProjectController', ['except' => ['create', 'edit']]);
+
+    # Note #
+    Route::resource('project/{id}/note', 'ProjectNoteController', ['except' => ['create', 'edit']]);
+
+});
+
+## Problemas Rewrite Apache ?? ##
+
+https://github.com/lucadegasperi/oauth2-server-laravel/wiki/Apache-ModRewrite
+
+## Transformers e Presenters ##
+
+Pacote Fractal
+
+Represente estrutura de dados RESTFul complexas e flexíveis
+
+https://packagist.org/packages/league/fractal
+
+composer require league/fractal
+
+Faz parte do The PHP League
+
+https://thephpleague.com/pt-br/
+
+Exemplo criar Transformers
+
+php artisan make:transformer Project
+
+Exemplo criar Presenters
+
+php artisan make:presenter Project
+
+
+
+

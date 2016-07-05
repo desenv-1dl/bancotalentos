@@ -1,0 +1,22 @@
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Tipo de Contato</th>
+        <th>Valor</th>
+        <th></th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="o in pessoasContatos">
+        <td width="40%">{{ contatos[o.contato_id].nome }}</td>
+        <td width="40%">{{ o.valor }}</td>
+        <td width="20%">
+            <button type="button" ng-click="removeContato($index)" class="btn btn-danger">
+                <i class="glyphicon glyphicon-remove"></i>
+                Remover
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>

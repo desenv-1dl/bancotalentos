@@ -1,0 +1,18 @@
+FASE;PREVISÃONO CRONOGRAMA;PREVISÃO DE FINALIZAÇÃO
+Preparação do ambiente;02/11;FINALIZADO
+Criação das Migrates;06/nov;FINALIZADO
+Criação das Seeds;10/nov;FINALIZADO
+Criação dos Models;16/nov;FINALIZADO
+Criação dos Templates;18/nov;FINALIZADO
+Criação das validações;24/nov;FINALIZADO
+Criação dos CRUDs (Cadastros);01/dez;FINALIZADO-BACKEND
+Validação dos CRUDs;07/dez;25/nov
+Rotas e Controles CRUDs;10/dez;25/nov
+Autenticações;15/dez;05/dez
+Integração PostGIS;17/dez;FINALIZADO
+Cadastro e Estudo de Matricula;30/dez;15/dez
+Relatórios e Peças técnicas;13/jan;28/dez
+Cadastro de Imóveis;27/jan;12/jan
+Cadastro de Polígonos WFS-T;29/jan;15/jan
+Download KML e Shape;03/fev;18/jan
+Anexo de documentos PDF;08/fev;23/jan

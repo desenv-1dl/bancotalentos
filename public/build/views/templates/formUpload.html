@@ -1,0 +1,42 @@
+<div class="modal-header">
+    <h3 class="modal-title">Upload de Arquivo</h3>
+</div>
+<div class="modal-body">
+
+    <h4>{{pessoa.nome}}</h4>
+    <ul>
+        <li><strong>CPF/CNPJ: </strong>{{pessoa.cpf_cnpj}}</li>
+        <li><strong>Imóvel: </strong>{{dados.nome_imovel}}</li>
+        <li><strong>Gleba: </strong>{{dados.nome_gleba}}</li>
+        <li><strong>Matrícula: </strong>{{dados.matricula}}</li>
+    </ul>
+    <form class="form-horizontal" name="form" role="form"  method="POST" ng-submit="ok()" enctype="multipart/form-data">
+        <!-- {!! csrf_field() !!} -->
+
+        <div class="form-group">
+            <label class="col-md-4 control-label">Arquivo</label>
+            <div class="col-md-6">
+                <input type="file" class="form-control" id="file"
+                       ng-model="upload.file" name="file" required>
+                <input type="hidden" class="form-control"
+                       id="area_de_propriedade_particular_id"
+                       ng-model="upload.area_de_propriedade_particular_id" name="area_de_propriedade_particular_id">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label">Tipo de Arquivo</label>
+            <div class="col-md-6">
+                <select name="tipo_arquivo" id="tipo_arquivo" ng-model="upload.tipo_arquivo" class="form-control">
+                    <option value=""> -- selecione -- </option>
+                    <option value="contrato">Contrato</option>
+                    <option value="matricula">Matrícula</option>
+                </select>
+            </div>
+        </div>
+    </form>
+
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="ok()">Enviar</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancelar</button>
+</div>

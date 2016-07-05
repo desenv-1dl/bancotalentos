@@ -1,0 +1,82 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>Editar Bairro</h4>
+                <div class="panel-body">
+                    <div class="alert alert-danger" ng-show="error.error">
+                        <strong>Whoops!</strong> Ocorreu um erro.<br><br>
+                        <div>{{ error.message }}</div>
+                    </div>
+                    <form class="form-horizontal" name="form" role="form" method="POST" ng-submit="save()">
+                        <!-- {!! csrf_field() !!} -->
+                        <div class="form-group" ng-class="{'has-error' : !form.nome.$valid && form.bairro.nome.$touched}">
+                            <label class="col-md-4 control-label">Nome</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="nome" ng-model="bairro.nome" required>
+                                <div ng-messages="form.nome.$error" class="help-block" ng-show="form.nome.$touched">
+                                    <div ng-message="required">Campo Obrigatório</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" ng-class="{'has-error' : !form.bairro.sigla.$valid && form.bairro.sigla.$touched}">
+                            <label class="col-md-4 control-label">Sigla</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="sigla" ng-model="bairro.sigla" required>
+                                <div ng-messages="form.sigla.$error" class="help-block" ng-show="form.sigla.$touched">
+                                    <div ng-message="required">Campo Obrigatório</div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="form-group" ng-class="{'has-error' : !form.unidadeFederacao.$valid && form.unidadeFederacao.$touched}">
+                            <label class="col-md-4 control-label">Estado</label>
+                            <div class="col-md-6">
+                                <select class="form-control" id="unidade_federacao_id" name="unidade_federacao_id"
+                                        ng-change="getMunicipios()"
+                                        ng-model="bairro.municipio.data.unidade_federacao_id"
+                                        ng-options="unidadeFederacao.id as unidadeFederacao.nome for unidadeFederacao in unidadesFederacao"
+                                        >
+                                </select>
+                                <div ng-messages="form.unidadeFederacao.$error" class="help-block" ng-show="form.unidadeFederacao.$touched">
+                                    <div ng-message="required">Campo Obrigatório</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" ng-class="{'has-error' : !form.municipio_id.$valid && form.municipio_id.$touched}">
+                            <label class="col-md-4 control-label">Municipio</label>
+                            <div class="col-md-6">
+                                <select class="form-control" id="bairro_id" name="v"
+                                        ng-model="bairro.municipio_id"
+                                        ng-options="municipio.id as municipio.nome for municipio in municipios"
+                                        >
+                                </select>
+                                <div ng-messages="form.municipio_id.$error" class="help-block" ng-show="form.municipio_id.$touched">
+                                    <div ng-message="required">Campo Obrigatório</div>
+                                </div>
+                            </div>
+                        </div>
+                  
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <a ng-href="#/bairros" class="btn btn-warning">
+                                    <i class="glyphicon glyphicon-circle-arrow-left"></i>
+                                    Voltar
+                                </a>
+
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="glyphicon glyphicon-ok-sign"></i>
+                                    Alterar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

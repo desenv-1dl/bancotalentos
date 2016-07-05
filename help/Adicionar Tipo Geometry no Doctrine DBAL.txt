@@ -1,0 +1,104 @@
+Hi @mehany,
+
+Muito obrigado,
+
+Sua dica foi fundamental na solução do problema. 
+
+Não sei se é a melhor solução, mas também atendeu as minhas necessidades.
+
+Eu adicionei GeometryType.php, criada por Rauni Lillemets, em vendor\doctrine\dbal\lib\Doctrine\DBAL\Types
+
+Adicionei o tipo geometry no array doctrineTypeMapping em vendor\doctrine\dbal\lib\Doctrine\DBAL\Platforms\PostgreSqlPlatform.php
+
+
+   protected function initializeDoctrineTypeMappings()
+    {
+        $this->doctrineTypeMapping = array(
+			...
+            'geometry'	=> 'geometry',
+        );
+    }
+	
+Alterei o arquivo Type.php, criada por Rauni Lillemets, em vendor\doctrine\dbal\lib\Doctrine\DBAL\Types	
+
+Adicionei a constante
+
+const GEOMETRY = 'geometry';
+
+Adicionei a  gonstante GEOMETRY no array _typesMap 
+
+    private static $_typesMap = array(
+        ...
+        self::GEOMETRY => 'Doctrine\DBAL\Types\GeometryType',
+    );
+
+Rodei o commando 
+	
+	php artisan migrate:generate
+	
+O resultado foi
+
+	public function up()
+	{
+		Schema::create('private_area', function(Blueprint $table)
+		{
+			$table->integer('id', true);
+			$table->string('name')->nullable();
+			$table->geometry('geom')->nullable()->index('idx_private_area_geom');
+		});
+	}	
+
+Obrigado @mehany,
+
+## GeometryType.php ##
+
+<?php
+
+namespace Doctrine\DBAL\Types;
+
+use Doctrine\DBAL\Platforms\AbstractPlatform;
+
+/**
+ * Type that maps a PHP object to a clob SQL type.
+ *
+ * @since 2.0
+ */
+
+/**
+ * Class for database column "geometry".
+ *
+ * @author Rauni Lillemets
+ */
+class GeometryType extends Type {
+    const GEOMETRY = 'geometry';
+    const SRID = 3301;
+    public function getSqlDeclaration(array $fieldDeclaration, AbstractPlatform $platform) {
+        return 'geometry';
+    }
+//Should create WKT object from WKT string. (or leave as WKT string)
+    public function convertToPHPValue($value, AbstractPlatform $platform) {
+        return $value; //+
+    }
+//Should create WKT string from WKT object. (or leave as WKT string)
+    public function convertToDatabaseValue($value, AbstractPlatform $platform) {
+        return $value; //+
+    }
+    public function getName() {
+        return self::GEOMETRY;
+    }
+    public function canRequireSQLConversion() {
+        return true;
+    }
+//Should give WKT
+    public function convertToPHPValueSQL($sqlExpr, $platform) {
+        return 'ST_AsText(\''.$sqlExpr.'\') '; //+
+    }
+//Should create WKB
+    public function convertToDatabaseValueSQL($sqlExpr, AbstractPlatform $platform) {
+        return 'ST_GeomFromText(\''.$sqlExpr.'\', '.self::SRID.')'; //+
+    }
+}
+
+
+
+	

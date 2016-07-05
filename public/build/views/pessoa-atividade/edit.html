@@ -1,0 +1,143 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>Editar Curso/Estágio de Pessoa</h4>
+                <div class="panel-body">
+                    <div class="alert alert-danger" ng-show="error.error">
+                        <strong>Whoops!</strong> Ocorreu um erro.<br><br>
+                        <div>{{ error.message }}</div>
+                    </div>
+                    <form class="form-horizontal" name="form" role="form" method="POST" ng-submit="save()">
+                        <!-- {!! csrf_field() !!} -->
+                        <div class="form-group" ng-class="{'has-error' : !form.pessoa_id.$valid && form.pessoa_id.$touched}">
+                            <label class="col-md-4 control-label">Nome:
+                                {{pessoaAtividade.pessoa.data.nivelFuncional.data.nome_abrev+' '+pessoaAtividade.pessoa.data.nome}}</label>
+                            <div class="col-md-6">
+                                <div ng-messages="form.pessoa_id.$error" class="help-block" ng-show="form.pessoa_id.$touched">
+                                    <div ng-message="required">Campo Obrigatório</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" ng-class="{'has-error' : !form.modalidade_id.$valid && form.modalidade_id.$touched}">
+                            <label class="col-md-4 control-label">Modalidade</label>
+                            <div class="col-md-6">
+                                <select class="form-control" id="modalidade_id" name="modalidade_id"
+                                        ng-model="pessoaAtividade.modalidade_id"
+                                        ng-options="modalidade.id as modalidade.nome for modalidade in modalidades"
+                                        >
+                                </select>
+                                
+                                <div ng-messages="form.modalidade_id.$error" class="help-block" ng-show="form.modalidade_id.$touched">
+                                    <div ng-message="required">Campo Obrigatório</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" ng-class="{'has-error' : !form.atividade_id.$valid && form.atividade_id.$touched}">
+                            <label class="col-md-4 control-label">Curso/Estágio</label>
+                            <div class="col-md-6">
+                                <select class="form-control" id="modalidade_id" name="modalidade_id"
+                                        ng-model="pessoaAtividade.atividade_id"
+                                        ng-options="atividade.id as atividade.nome for atividade in atividades"
+                                        >
+                                </select>
+                                
+                                <div ng-messages="form.atividade_id.$error" class="help-block" ng-show="form.atividade_id.$touched">
+                                    <div ng-message="required">Campo Obrigatório</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" ng-class="{'has-error' : !form.instituicao_id.$valid && form.instituicao_id.$touched}">
+                            <label class="col-md-4 control-label">Instituição de Ensino</label>
+                            <div class="col-md-6">
+                                <select class="form-control" id="instituicao_id" name="instituicao_id"
+                                        ng-model="pessoaAtividade.instituicao_id"
+                                        ng-options="instituicao.id as instituicao.nome for instituicao in instituicoes"
+                                        >
+                                </select>
+                                
+                                <div ng-messages="form.instituicao_id.$error" class="help-block" ng-show="form.instituicao_id.$touched">
+                                    <div ng-message="required">Campo Obrigatório</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" ng-class="{'has-error' : !form.custo_atividade.$valid && form.custo_atividade.$touched}">
+                            <label class="col-md-4 control-label">Valor do Curso</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="custo_atividade" ng-model="pessoaAtividade.custo_atividade" required>
+                                <div ng-messages="form.custo_atividade.$error" class="help-block" ng-show="form.custo_atividade.$touched">
+                                    <div ng-message="required">Campo Obrigatório</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" ng-class="{'has-error' : !form.municipio_id.$valid && form.municipio_id.$touched}">
+                            <label class="col-md-4 control-label">Cidade</label>
+                            <div class="col-md-6">
+                                <select class="form-control" id="municipio_id" name="municipio_id"
+                                        ng-model="pessoaAtividade.municipio_id"
+                                        ng-options="municipio.id as municipio.nome for municipio in municipios"
+                                        >
+                                </select>
+                                
+                                <div ng-messages="form.municipio_id.$error" class="help-block" ng-show="form.municipio_id.$touched">
+                                    <div ng-message="required">Campo Obrigatório</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" ng-class="{'has-error' : !form.ano.$valid && form.ano.$touched}">
+                            <label class="col-md-4 control-label">Valor do Curso</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="ano" ng-model="pessoaAtividade.ano | dateBr" required>
+                                <div ng-messages="form.ano.$error" class="help-block" ng-show="form.ano.$touched">
+                                    <div ng-message="required">Campo Obrigatório</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{'has-error' : !form.carga_horaria.$valid && form.carga_horaria.$touched}">
+                            <label class="col-md-4 control-label">Carga Horária</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="carga_horaria" ng-model="pessoaAtividade.carga_horaria" required>
+                                <div ng-messages="form.carga_horaria.$error" class="help-block" ng-show="form.carga_horaria.$touched">
+                                    <div ng-message="required">Campo Obrigatório</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{'has-error' : !form.bi.$valid && form.bi.$touched}">
+                            <label class="col-md-4 control-label">BI</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="bi" ng-model="pessoaAtividade.bi" required>
+                                <div ng-messages="form.bi.$error" class="help-block" ng-show="form.bi.$touched">
+                                    <div ng-message="required">Campo Obrigatório</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <a ng-href="#/pessoas-atividades" class="btn btn-warning">
+                                    <i class="glyphicon glyphicon-circle-arrow-left"></i>
+                                    Voltar
+                                </a>
+
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="glyphicon glyphicon-ok-sign"></i>
+                                    Alterar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>>

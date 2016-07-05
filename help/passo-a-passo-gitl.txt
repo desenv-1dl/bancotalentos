@@ -1,0 +1,38 @@
+#GIT Projeto Sip
+
+1) CLONANDO O REPOSITÓRIO OFICIAL E CONFIGURANDO INFORMAÇÕES
+
+	git clone hectare@hectaredobrasil.com.br:/home/hectare/public_html/webgis
+	git config --global user.name "Cesar Soares"
+	git config --global user.email cesar.soares@gmail.com
+
+2) VERIFICANDO LOGS DE MODIFICAÇÕES
+	git log
+	git log --oneline - SIMPLIFICADO
+
+2) APÓS MODIFICAÇÕES, VERIFICAR O STATUS
+
+	administrador@routeHB:~/webgis/er$ git status
+	On branch master
+	Your branch is up-to-date with 'origin/master'.
+	Changes not staged for commit:
+	  (use "git add <file>..." to update what will be committed)
+	  (use "git checkout -- <file>..." to discard changes in working directory)
+	
+		modified:   geodoc.sql
+
+	no changes added to commit (use "git add" and/or "git commit -a")
+
+3) ADICIONANDO FAZENDO O COMMIT NO ARQUIVO MODIFICADO
+	git add er/ - ADICIONANDO A PASTA INTEIRA
+	git add er/sql - ADICIONANDO APENAS O ARQUIVO
+
+4) FAZENDO O COMMIT DO ARQUIVO
+	git commit -m 'modificações no er.sql para criaçao do manual git projeto geodoc'
+
+5) FAZENDO O PUSH NO SERVIDOR
+	git push origin master - CONFIGURAÇÕES EM .git/config
+
+6) DESFAZENDO O COMMIT
+	git checkout c8ccd1c - hash do commit adquirido em git log --online
+

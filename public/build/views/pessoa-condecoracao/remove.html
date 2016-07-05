@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>Pessoa-Contato</h4>
+                    
+                <div class="panel-body">
+                    <p>Deseja realmente excluir o registro de condecoração desta pessoa?</p>
+                    <ul>
+                        <li><strong>Nome: </strong>{{pessoaCondecoracao.pessoa.data.nivelFuncional.data.nome_abrev+' '+pessoaCondecoracao.pessoa.data.nome}}</li>
+                        <li><strong>Condecoracao: </strong>{{pessoaCondecoracao.condecoracao.data.nome}}</li>
+                        <li><strong>Condecoracao: </strong>{{pessoaCondecoracao.data_indicacao | dateBr}}</li>
+                        <li><strong>Condecoracao: </strong>{{pessoaCondecoracao.data_condecoracao | dateBr}}</li>
+                    </ul>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <a ng-href="#/pessoas-condecoracoes" class="btn btn-warning">
+                                    <i class="glyphicon glyphicon-circle-arrow-left"></i>
+                                    Voltar
+                                </a>
+
+                                <button type="button" class="btn btn-danger" ng-click="remove()">
+                                    <i class="glyphicon glyphicon-remove-sign"></i>
+                                    Remover
+                                </button>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

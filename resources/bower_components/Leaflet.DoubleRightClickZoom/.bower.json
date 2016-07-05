@@ -1,0 +1,13 @@
+{
+  "name": "Leaflet.DoubleRightClickZoom",
+  "homepage": "https://github.com/GhostGroup/Leaflet.DoubleRightClickZoom",
+  "_release": "fc814456da",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "fc814456da5eee7dbe7d2a45e7fb3d55f082d839"
+  },
+  "_source": "https://github.com/GhostGroup/Leaflet.DoubleRightClickZoom.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/GhostGroup/Leaflet.DoubleRightClickZoom.git"
+}

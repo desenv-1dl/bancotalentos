@@ -1,0 +1,13 @@
+{
+  "name": "leaflet-fusesearch",
+  "homepage": "https://github.com/naomap/leaflet-fusesearch",
+  "_release": "27cf82f87e",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "27cf82f87e8dfd4c81239dfa5470eef9144bf359"
+  },
+  "_source": "https://github.com/naomap/leaflet-fusesearch.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/naomap/leaflet-fusesearch.git"
+}

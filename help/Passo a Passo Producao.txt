@@ -1,0 +1,68 @@
+## Criar Entity - Presenter - Transformers ##
+
+Comando para criar Entity 
+
+ php artisan make:entity Tabela
+
+Yes para Presenter
+
+ Would you like to create a Presenter? [y|N] (yes/no) [no]:
+ > y
+
+Yes para Presenter Transformer
+
+ Would you like to create a Transformer? [y|N] (yes/no) [no]:
+ > y
+
+## Ajustar Entity ##
+
+Em app\Entities\Tabela.php
+
+Adicione as colunas da tabela que serão obrigatorias no atributo $fillable
+
+ protected $fillable = [
+	'coluna1',
+	'coluda2'
+ ];
+ 
+ 
+++ Tabelas no singular ou com schemas ++
+
+Sobrescreva o atributo $table de Model adicionando o atributo localmente como protected
+
+ protected $table = 'tabela';
+ 
+ ou
+ 
+ protected $table = 'schema.tabela';
+
+++ Tabelas sem timestamps - craated_at e updated_at ++
+
+Sobrescreva o atributo $timestamps de Model adicionando o atributo localmente como public
+ 
+ public $timestamps = false;
+ 
+++ Mapeando os relacionamentos ++
+
+hasOne - hasMany - belongsTo - belogsToMany 
+ 
+http://laravel.com/docs/5.1/eloquent-relationships 
+
+- hasOne: Relação 1:1
+
+- hasMany:  Relação 1:n //ex. Categoria
+
+- belongsTo:   Relação n:1 //ex. Produto
+
+- belogsToMany: Relação n:m //ex. Produto - Para Produto-Item
+
+
+## Controllers ##
+
+Criar controlers em app\Http\Controllers
+
+ 
+ 
+ 
+ 
+    

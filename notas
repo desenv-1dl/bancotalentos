@@ -1,0 +1,12 @@
+ADICIONADO AO PROJETO
+SMART-TABLE
+bower install angular-smart-table
+
+PENDENCIAS
+- Tela de login
+- formatar contatos
+- verificar obrigatoriedade dos dados no backend (clausula if no tranformer)
+- tratar erros com mensagens na tela
+- verificar obrigatoriedade de dados no sistema (abreviaturas, etc)
+- trabalhar com datas (permitir datas nulas em exp. profissional)
+- remoção de dados com dependencia (ex. remover pessoa q tenha registro em outra tabela)

@@ -1,0 +1,142 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h4>Visualizar Pessoas</h4>
+                    
+                        <strong>Graduação: </strong>{{pessoa.nivelFuncional.data.nome}}<br>
+                        <strong>Nome: </strong>{{pessoa.nome}}<br>
+                        <strong>Nome de Guerra: </strong>{{pessoa.nome_guerra}}
+                    
+                </div>
+                
+                <div class="panel-body">
+                    <!-- INICIO DO CONTAINER-->
+                    
+                    <div class="container" ng-app ng-init="tab=1">
+                    <ul class="tabs-nav">
+                        <li><a class="btn-danger" ng-click="tab=1" ng-class="{'active' : tab==1}"> Informações Básicas</a></li>
+                        <li><a class="btn-danger" ng-click="tab=2" ng-class="{'active' : tab==2}"> Contatos</a></li>
+                        <li><a class="btn-danger" ng-click="tab=3" ng-class="{'active' : tab==3}"> Condecorações</a></li>
+                        <li><a class="btn-danger" ng-click="tab=4" ng-class="{'active' : tab==4}"> Cursos</a></li>
+                        <li><a class="btn-danger" ng-click="tab=5" ng-class="{'active' : tab==5}"> Habilidades</a></li>
+                    </ul>
+                    <div class="tabs-container col-md-12">
+                        <div class="tab-content" ng-show="tab == 1">
+                            <ul>
+                                <li><strong>Nome: </strong>{{pessoa.nome}}</li>
+                                <li><strong>Nome de Guerra: </strong>{{pessoa.nome_guerra}}</li>
+                                <li><strong>CPF: </strong>{{pessoa.cpf | cpfcnpj}}</li>
+                                <li><strong>Nível Funcional: </strong>{{pessoa.nivelFuncional.data.nome}}</li>
+                                <li><strong>Organização: </strong>{{pessoa.organizacao.data.nome}}</li>
+                                <li><strong>Gênero: </strong>{{pessoa.genero.data.nome}}</li>
+                                <li><strong>Formação: </strong>{{pessoa.formacao.data.nome}}</li>
+                                <li><strong>Data de nascimento: </strong>{{pessoa.data_nascimento | dateBr}}</li>
+                                <li><strong>Endereço: </strong>{{pessoa.endereco+','+pessoa.numero}}</li>
+                                <li><strong>Complemento: </strong>{{pessoa.complemento}}</li>
+                                <li><strong>CEP: </strong>{{pessoa.cep}}</li>
+                                <li><strong>Bairro: </strong>{{pessoa.bairro.data.nome}}</li>
+                                <li><strong>Município: </strong>{{pessoa.municipio.data.nome}}</li>
+                                <li><strong>Estado: </strong>{{pessoa.municipio.data.unidadeFederacao.data.nome}}</li>
+                                <li><strong>Observação: </strong>{{pessoa.observacao}}</li>
+                                <li><strong>Serviço Ativo: </strong>{{pessoa.ativa}}</li>
+                            </ul>
+                        </div>
+                        <div class="tab-content col-md-11" ng-show="tab == 2">
+                            <table class="table">
+                                <tr >
+                                    <th>Contatos</th>
+                                </tr>
+                                <tbody>
+                                    <tr class="btn-default" ng-repeat="(key, value) in pessoaContatos">
+                                        <td>{{value.valor}}</td>
+                                    </tr>
+                                
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-content col-md-11" ng-show="tab == 3">
+                            <table class="table col-md-8">
+                                <tr>
+                                    <th>Condecoração</th><th>Data de Indicação</th><th>Data da Condecoração</th>
+                                </tr>
+                                <tbody>
+                                    <tr class="btn-default" ng-repeat="(key, value) in pessoaCondecoracoes">
+                                    <td >{{value.condecoracao.data.nome}}</td>
+                                    <td >{{value.data_indicacao | dateBr}}</td>
+                                    <td>{{value.data_condecoracao | dateBr}}</td>
+<!--BOTAO                                    
+                                    <td>
+                                        <button type="button" ng-click="removeItem(row)" class="btn btn-sm btn-danger">
+                                            <i class="glyphicon glyphicon-remove-circle"></i>
+                                        </button>
+
+                                    </td>
+BOTAN FIM-->
+                                </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                        <div class="tab-content col-md-11" ng-show="tab == 4">
+                            <table class="table">
+                                <tr >
+                                    <th>Modalidade</th>
+                                    <th>Código</th>
+                                    <th>Curso/Estágio</th>
+                                    <th>Instituição</th>
+                                    <th>Local</th>
+                                </tr>
+                                <tbody>
+                                    <tr class="btn-default" ng-repeat="(key, value) in pessoaAtividades">
+                                        <td>{{value.modalidade.data.nome}}</td>
+                                        <td>{{value.atividade.data.codigo}}</td>
+                                        <td >{{value.atividade.data.nome}}</td>
+                                        <td>{{value.instituicao.data.nome}}</td>
+                                        <td>{{value.municipio.data.nome}}</td>
+                                    </tr>
+                                
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-content col-md-11" ng-show="tab == 5">
+                            <table class="table">
+                                <tr>
+                                    <th>Habilidade</th>
+                                    <th>Início</th>
+                                    <th>Fim</th>
+                                    <th>Observação</th>
+                                </tr>
+                                <tbody>
+                                    <tr ng-repeat="(key, value) in pessoaExperienciasProfissionais" class="btn-default">
+                                        <td> {{value.experienciaProfissional.data.nome}}</td>
+                                        <td> {{value.data_inicio}}</td>
+                                        <td> {{value.data_fim}}</td>
+                                        <td> {{value.observacao}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        
+                    </div>
+                    </div>
+                    <!-- FIM DO CONTAINER-->
+                    
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <a ng-href="#/pessoas" class="btn btn-warning">
+                                    <i class="glyphicon glyphicon-circle-arrow-left"></i>
+                                    Voltar
+                                </a>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                    
+ 

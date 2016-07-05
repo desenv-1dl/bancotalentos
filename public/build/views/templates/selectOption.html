@@ -1,0 +1,9 @@
+<div>
+    <select ng-model="{{ attr.campo }}">
+        <option
+                ng-selected="{{dado.bairro_id == attr.campo}}"
+                ng-repeat="dado in attr.dados" value="{{dado.id}}">
+            {{dado.texto}}
+        </option>
+    </select>
+</div>

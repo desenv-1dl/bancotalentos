@@ -1,0 +1,69 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>Registro de Experiência Profissional</h4>
+                <div class="panel-body">
+                    <div class="alert alert-danger" ng-show="error.error">
+                        <strong>Whoops!</strong> Ocorreu um erro.<br><br>
+                        <div>{{ error.message }}</div>
+                    </div>
+                    <form class="form-horizontal" name="form" role="form" method="POST" ng-submit="save()">
+                        <!-- {!! csrf_field() !!} -->
+                        
+                        <div class="form-group" ng-class="{'has-error' : !form.pessoa_id.$valid && form.pessoa_id.$touched}">
+                            <label class="col-md-6 control-label">{{pessoa.nivelFuncional.data.nome+' '+pessoa.nome}}</label>
+                       
+                        </div>
+                        <div class="form-group" ng-class="{'has-error' : !form.experiencia_profissional_id.$valid && form.experiencia_profissional_id.$touched}">
+                            <label class="col-md-4 control-label">Experiência Profissional</label>
+                            <div class="col-md-6">
+                                <select class="form-control" id="experiencia_profissional_id" name="experiencia_profissional_id"
+                                        ng-model="pessoaExperienciaProfissional.experiencia_profissional_id"
+                                        ng-options="experienciaProfissional.id as experienciaProfissional.nome for experienciaProfissional in experienciasProfissionais"
+                                        >
+                                </select>
+                                <div ng-messages="form.experiencia_profissional_id.$error" class="help-block" ng-show="form.experiencia_profissional_id.$touched">
+                                    <div ng-message="required">Campo Obrigatório</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" ng-class="{'has-error' : !form.data_inicio.$valid && form.data_inicio.$touched}">
+                            <label class="col-md-4 control-label">Início</label>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" name="data_inicio" ng-model="pessoaExperienciaProfissional.data_inicio" required>
+                                <div ng-messages="form.data_inicio.$error" class="help-block" ng-show="form.data_inicio.$touched">
+                                    <div ng-message="required">Campo Obrigatório</div>
+                                </div>
+                            </div>
+                            <label class="col-md-1 control-label">Fim</label>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" name="data_fim" ng-model="pessoaExperienciaProfissional.data_fim" required>
+                                <div ng-messages="form.data_fim.$error" class="help-block" ng-show="form.data_fim.$touched">
+                                    <div ng-message="required">Campo Obrigatório</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <a ng-href="#/pessoas-experiencias-profissionais" class="btn btn-warning">
+                                    <i class="glyphicon glyphicon-circle-arrow-left"></i>
+                                    Voltar
+                                </a>
+
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="glyphicon glyphicon glyphicon-ok-sign"></i>
+                                    Salvar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

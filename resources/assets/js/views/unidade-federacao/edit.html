@@ -1,0 +1,68 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>Editar Estado</h4>
+                <div class="panel-body">
+                    <div class="alert alert-danger" ng-show="error.error">
+                        <strong>Whoops!</strong> Ocorreu um erro.<br><br>
+                        <div>{{ error.message }}</div>
+                    </div>
+                    <form class="form-horizontal" name="form" role="form" method="POST" ng-submit="save()">
+                        <!-- {!! csrf_field() !!} -->
+                        <div class="form-group" ng-class="{'has-error' : !form.nome.$valid && form.nome.$touched}">
+                            <label class="col-md-4 control-label">Nome</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="nome" ng-model="unidadeFederacao.nome" required>
+                                <div ng-messages="form.nome.$error" class="help-block" ng-show="form.nome.$touched">
+                                    <div ng-message="required">Campo Obrigatório</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" ng-class="{'has-error' : !form.sigla.$valid && form.sigla.$touched}">
+                            <label class="col-md-4 control-label">Sigla</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="sigla" ng-model="unidadeFederacao.sigla" required>
+                                <div ng-messages="form.sigla.$error" class="help-block" ng-show="form.sigla.$touched">
+                                    <div ng-message="required">Campo Obrigatório</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" ng-class="{'has-error' : !form.unidadeFederacao.pais_id.$valid && form.unidadeFederacao.pais_id.$touched}">
+                            <label class="col-md-4 control-label">País</label>
+                            <div class="col-md-6">
+                                
+                                <select class="form-control" id="unidade_federacao_id" name="v"
+                                        ng-model="unidadeFederacao.pais_id"
+                                        ng-options="pais.id as pais.nome for pais in paises"
+                                        >
+                                </select>
+                                <div ng-messages="form.pais_id.$error" class="help-block" ng-show="form.unidadeFederacao.pais_id.$touched">
+                                    <div ng-message="required">Campo Obrigatório</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <a ng-href="#/unidades-federacao" class="btn btn-warning">
+                                    <i class="glyphicon glyphicon-circle-arrow-left"></i>
+                                    Voltar
+                                </a>
+
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="glyphicon glyphicon-ok-sign"></i>
+                                    Alterar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

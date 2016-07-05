@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>Visualizar Atividade</h4>
+                <div class="panel-body">
+                    <ul>
+                        <li><strong>Nome: </strong>{{pessoaAtividade.pessoa.data.nivelFuncional.data.nome_abrev+' '+pessoaAtividade.pessoa.data.nome}}</li>
+                        <li><strong>Modalidade: </strong>{{pessoaAtividade.modalidade.data.nome}}</li>
+                        <li><strong>Curso/Estágio: </strong>{{pessoaAtividade.atividade.data.nome}}</li>
+                        <li><strong>Instituição: </strong>{{pessoaAtividade.instituicao.data.nome}}</li>
+                        <li><strong>Custo: </strong>{{pessoaAtividade.custo_atividade}}</li>
+                        <li><strong>Local: </strong>{{pessoaAtividade.municipio.data.nome}}</li>
+                        <li><strong>Data: </strong>{{pessoaAtividade.ano | dateBr}}</li>
+                        <li><strong>Carga horária: </strong>{{pessoaAtividade.carga_horaria}}</li>
+                    </ul>
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <a ng-href="#/pessoas-atividades" class="btn btn-warning">
+                                    <i class="glyphicon glyphicon-circle-arrow-left"></i>
+                                    Voltar
+                                </a>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

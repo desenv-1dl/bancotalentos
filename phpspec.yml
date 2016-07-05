@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Sip
+        psr4_prefix: Sip
+        src_path: app
