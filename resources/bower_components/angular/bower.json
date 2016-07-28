@@ -5,5 +5,6 @@
   "main": "./angular.js",
   "ignore": [],
   "dependencies": {
+    "ngMask": "angular-mask#^3.1.1"
   }
 }

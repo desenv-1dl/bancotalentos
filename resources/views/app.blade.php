@@ -135,6 +135,7 @@
     <script src="{{ asset('build/js/vendor/jquery.min.js')}}"></script>
     <script src="{{ asset('build/js/vendor/bootstrap.min.js')}}"></script>
     <script src="{{ asset('build/js/vendor/angular.min.js')}}"></script>
+    <script src="{{ asset('ngMask.min.js')}}"></script>
     <script src="{{ asset('build/js/vendor/angular-route.min.js')}}"></script>
     <script src="{{ asset('build/js/vendor/angular-resource.min.js')}}"></script>
     <script src="{{ asset('build/js/vendor/angular-animate.min.js')}}"></script>
