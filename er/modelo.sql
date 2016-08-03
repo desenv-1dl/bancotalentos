@@ -178,6 +178,32 @@ BEGIN;
         created_at TIMESTAMP,
         updated_at TIMESTAMP
     );
+-- ##############################################################################################################################    
+-- MERITOS
+    CREATE TABLE promocoes (
+        id SERIAL PRIMARY KEY,
+        pessoa_id INTEGER NOT NULL REFERENCES pessoa (id),
+        tipo_da_promocao VARCHAR(20),
+        posto_graduacao_id SMALLINT REFERENCES nivel_funcional (id),
+        data_promocao DATE,
+        documento_de_promocao VARCHAR(255)        
+    );
+    
+    CREATE TABLE elogios_citacoes_de_merito (
+        id SERIAL PRIMARY KEY,
+        pessoa_id INTEGER NOT NULL REFERENCES pessoa (id),
+        descricao VARCHAR
+    );
+    
+    CREATE TABLE trabalho_util (
+        id SERIAL PRIMARY KEY,
+        pessoa_id INTEGER NOT NULL REFERENCES pessoa (id),
+        tipo VARCHAR(255),
+        mencao VARCHAR(10)
+    );  
+-- #############################################################################################################################
+--     DEMERITOS
+    CREATE TABLE 
 
 
     GRANT ALL ON TABLE experiencia_profissional TO public;
