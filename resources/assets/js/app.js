@@ -46,7 +46,7 @@ app.directive('selectOption', function() {
 
 app.provider('appConfig', ['$httpParamSerializerProvider', function($httpParamSerializerProvider){
     var config = {
-        baseUrl:  'http://localhost:8000',
+        baseUrl:  'http://10.25.163.12:8000',
         project: {
             status: [
                 {value: 1, label: 'Não Iniciado'},
