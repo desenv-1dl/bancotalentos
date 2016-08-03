@@ -2,5 +2,9 @@
 /vendor/
 nbproject/
 .gitignore
+<<<<<<< HEAD
 er/
 nohup.out
+=======
+public/build
+>>>>>>> ebee4aedd0da304ae3fc55214f823724cac0c9b6
