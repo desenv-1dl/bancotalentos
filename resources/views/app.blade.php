@@ -223,9 +223,13 @@
             <!-- /.navbar-collapse -->
         </nav>
 
-        <div id="page-wrapper">
+        <!--<div id="page-wrapper" style="background: red">-->
 
-            <div class="container-fluid">
+<!--            <div class="container-fluid" >-->
+                <div ng-view style="height: 100%">
+   
+
+                </div>
 <!--
                  Page Heading 
                 <div class="row">
@@ -495,10 +499,10 @@
                 </div>
                  /.row 
 -->
-            </div>
+<!--            </div>-->
             <!-- /.container-fluid -->
 
-        </div>
+        <!--</div>-->
         <!-- /#page-wrapper -->
 
     </div>
@@ -508,9 +512,7 @@
         <flash-message duration="10000"></flash-message>
     </div>-->
 
-    <div ng-view>
 
-    </div>
 
     <!-- Scripts -->
     @if(Config::get('app.debug'))
