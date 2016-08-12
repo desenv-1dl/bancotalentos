@@ -7,7 +7,7 @@
         <title>Sistema de Informação de Pessoas</title>
         @if(Config::get('app.debug'))
         <!--<link href="{{ asset('build/css/app.css')}}" rel="stylesheet" />-->
-        <!--<link href="{{ asset('build/css/components.css')}}" rel="stylesheet" />-->
+        <link href="{{ asset('build/css/components.css')}}" rel="stylesheet" />
         <link href="{{ asset('build/css/flaticon.css')}}" rel="stylesheet" />
         <link href="{{ asset('build/css/fonts.css')}}" rel="stylesheet" />
         <link href="{{ asset('build/css/font-awesome.css')}}" rel="stylesheet" />
@@ -58,7 +58,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin</a>
+                <a class="navbar-brand" href="{{ url('/')}}"><strong> Banco de Talentos</strong> Sistema de Informações de Pessoal da 1ª Divisão de Levantamento</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -164,24 +164,49 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li class="active">
-                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    <li>
+                        <a href="{{ url('/')}}"><i class="fa fa-fw fa-dashboard"></i> Home</a>
                     </li>
                     <li>
-                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                        <a href="{{url('./#/pessoas')}}"><i class="fa fa-fw fa-bar-chart-o"></i> Pessoas</a>
                     </li>
                     <li>
-                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-arrows-v"></i> Condecorações <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo1" class="collapse">
+                            <li>
+                                <a href="{{url('./#/condecoracoes')}}">Lista de Condecorações</a>
+                            </li>
+                            <li>
+                                <a href="{{url('./#/pessoas-condecoracoes')}}">Pessoas Condecoradas</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-arrows-v"></i> Cursos/Estágios <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo2" class="collapse">
+                            <li>
+                                <a href="{{url('./#/modalidades')}}">Lista de Modalidades</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('./#/atividades')}}">Lista de Cursos/Estágios</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('./#/pessoas-atividades')}}">Pessoas e Cursos/Estágios</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo3"><i class="fa fa-fw fa-arrows-v"></i> Experiência Profissional <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo3" class="collapse">
+                            <li>
+                                <a href="{{url('./#/experiencias-profissionais')}}">Lista de Experiências Profissionais</a>
+                            </li>
+                            <li>
+                                <a href="{{url('./#/pessoas-experiencias-profissionais')}}">Pessoas e Experiências Profissionais</a>
+                            </li>
+                        </ul>
                     </li>
-                    <li>
-                        <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-                    </li>
+                    
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
@@ -192,13 +217,7 @@
                                 <a href="#">Dropdown Item</a>
                             </li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
-                    </li>
-                    <li>
-                        <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
-                    </li>
+                    </li> 
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -207,8 +226,8 @@
         <div id="page-wrapper">
 
             <div class="container-fluid">
-
-                <!-- Page Heading -->
+<!--
+                 Page Heading 
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
@@ -221,7 +240,7 @@
                         </ol>
                     </div>
                 </div>
-                <!-- /.row -->
+                 /.row 
 
                 <div class="row">
                     <div class="col-lg-12">
@@ -231,7 +250,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- /.row -->
+                 /.row 
 
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
@@ -323,7 +342,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- /.row -->
+                 /.row 
 
                 <div class="row">
                     <div class="col-lg-12">
@@ -337,7 +356,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- /.row -->
+                 /.row 
 
                 <div class="row">
                     <div class="col-lg-4">
@@ -474,8 +493,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- /.row -->
-
+                 /.row 
+-->
             </div>
             <!-- /.container-fluid -->
 
@@ -484,10 +503,10 @@
 
     </div>
 
-    <div>
+<!--    <div>
         @include('flash::message')
         <flash-message duration="10000"></flash-message>
-    </div>
+    </div>-->
 
     <div ng-view>
 
