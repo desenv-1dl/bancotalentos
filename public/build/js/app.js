@@ -125,12 +125,12 @@ app.config([
 //            controller: 'HomeController'
 //        })
         .when('/',{
-            templateUrl: 'build/views/index.html',
-            controller: 'IndexController'
+            templateUrl: 'build/views/home.html',
+            controller: 'HomeController'
         })
         .when('/index',{
-            templateUrl: 'build/views/index.html',
-            controller: 'IndexController'
+            templateUrl: 'build/views/home.html',
+            controller: 'HomeController'
         })
         .when('/home',{
             templateUrl: 'build/views/home.html',
