@@ -10,7 +10,7 @@ angular.module('app.controllers')
             enableHiding: true,
             columnDefs: [
                 { field: 'nome', displayName: "Nome" },
-                { field: 'nome_abrev', displayName: "Sigla" },
+                { field: 'nome_abrev', displayName: "Sigla/Código" },
                 { field: 'acoes', displayName: "Acoes", 
                     enableFiltering:  false, enableSorting: false, width: 200,
                     cellTemplate : '<menu-acao></menu-acao>'
