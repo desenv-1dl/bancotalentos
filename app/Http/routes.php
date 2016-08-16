@@ -34,6 +34,7 @@ Route::post('oauth/access_token', function() {
     Route::resource('unidade-federacao', 'UnidadeFederacaoController', ['except' => ['create', 'edit']]);
     Route::resource('home', 'HomeController', ['except' => ['create', 'edit']]);
     Route::resource('municipio', 'MunicipioController', ['except' => ['create', 'edit']]);
+    Route::resource('taf', 'TafController', ['except' => ['create', 'edit']]);
     Route::resource('bairro', 'BairroController', ['except' => ['create', 'edit']]);
     Route::resource('contato', 'ContatoController', ['except' => ['create', 'edit']]);
     Route::resource('pessoa', 'PessoaController', ['except' => ['create', 'edit']]);
@@ -44,6 +45,7 @@ Route::post('oauth/access_token', function() {
     Route::resource('pessoa-condecoracao', 'PessoaCondecoracaoController', ['except' => ['create', 'edit']]);
     Route::resource('experiencia-profissional', 'ExperienciaProfissionalController', ['except' => ['create', 'edit']]);
     Route::resource('pessoa-experiencia-profissional', 'PessoaExperienciaProfissionalController', ['except' => ['create', 'edit']]);
+    Route::resource('taf', 'TafController', ['except' => ['create', 'edit']]);
     
 
 //});

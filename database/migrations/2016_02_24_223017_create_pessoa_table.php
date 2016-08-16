@@ -27,7 +27,7 @@ class CreatePessoaTable extends Migration {
 			$table->string('complemento')->nullable();
 			$table->smallInteger('bairro_id')->nullable();
 			$table->smallInteger('municipio_id')->nullable();
-			$table->text('obervacao')->nullable();
+			$table->text('observacao')->nullable();
 			$table->boolean('ativa')->nullable()->default(DB::raw('1'));
 			$table->timestamps();
 		});
