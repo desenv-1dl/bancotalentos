@@ -11,12 +11,19 @@ namespace Sip\Validators;
 
 use Prettus\Validator\LaravelValidator;
 
-class BairroValidator extends LaravelValidator
+class TafValidator extends LaravelValidator
 {
     protected $rules = [
-        'nome'                  => 'required|max:255|min:3',
-        'sigla'                 => 'required',
-        'municipio_id'          => 'required|integer'
+        
+        'pessoa_id'             => 'required',
+        'nr_taf'                => 'required|integer',
+        'ano'                   => 'required',
+        'chamada'               => 'required',
+        'data_realizacao'       => 'required',
+        'mencao'                => 'required',
+        'suficiencia'           => 'required',
+        'situacao'              => 'required',
+        'documento'             => 'required'
     ];
 
 }

@@ -103,5 +103,10 @@ class SipRepositoryProvider extends ServiceProvider
         \Sip\Repositories\PessoaExperienciaProfissionalRepository::class,
         \Sip\Repositories\PessoaExperienciaProfissionalRepositoryEloquent::class
         );
+        
+        $this->app->bind(
+        \Sip\Repositories\TafRepository::class,
+        \Sip\Repositories\TafRepositoryEloquent::class
+        );
     }
 }
