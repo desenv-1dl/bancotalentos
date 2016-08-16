@@ -97,7 +97,10 @@
                         <div class="form-group" ng-class="{'has-error' : !form.data_nascimento.$valid && form.data_nascimento.$touched}">
                             <label class="col-md-4 control-label">Data de nascimento</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="data_nascimento" ng-model="pessoa.data_nascimento" ui-date-mask required>
+                                <input type="text" class="form-control" name="data_nascimento" 
+                                       ng-model="pessoa.data_nascimento"  
+                                       mask="39/19/9999"
+                                       required>
                                 <div ng-messages="form.data_nascimento.$error" class="help-block" ng-show="form.data_nascimento.$touched">
                                     <div ng-message="required">Campo Obrigatório</div>
                                 </div>

@@ -27,8 +27,6 @@ class PessoaValidator extends LaravelValidator
         'cep'                   => 'required',
         'bairro_id'             => 'required',
         'municipio_id'          => 'required'
-        
-        
     ];
 
 }

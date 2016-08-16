@@ -120,7 +120,7 @@ BEGIN;
         cep VARCHAR(255),
         bairro_id SMALLINT REFERENCES bairro (id),
         municipio_id SMALLINT REFERENCES municipio(id),
-        obervacao TEXT,
+        observacao TEXT,
         ativa BOOLEAN DEFAULT TRUE,--SERVIÇO ATIVO OU RESERVA
         created_at timestamp,
         updated_at timestamp
@@ -205,7 +205,35 @@ BEGIN;
 --     DEMERITOS
     CREATE TABLE 
 
+    CREATE TABLE taf(
+        id SERIAL PRIMARY KEY,
+        pessoa_id INTEGER NOT NULL REFERENCES pessoa (id),
+        nr_taf INTEGER NOT NULL CHECK(nr_taf IN(1,2,3)),
+        ano VARCHAR(4) NOT NULL,
+        chamada INTEGER NOT NULL CHECK(chamada IN(1,2)),
+        data_realizacao DATE NOT NULL,
+        mencao VARCHAR NOT NULL CHECK(mencao IN('I','R','B','MB','E')),
+        suficiencia VARCHAR NOT NULL CHECK(suficiencia IN('Suficiente','Insuficiente')),
+        situacao VARCHAR NOT NULL CHECK(situacao IN('Normal')),
+        documento VARCHAR(255) NOT NULL,
+        created_at TIMESTAMP,
+        updated_at TIMESTAMP
+    );
 
+    CREATE TABLE tat(
+        id SERIAL PRIMARY KEY,
+        pessoa_id INTEGER NOT NULL REFERENCES pessoa (id),
+        ano VARCHAR(4) NOT NULL,
+        mencao VARCHAR NOT NULL CHECK(mencao IN('I','R','B','MB','E')),
+        motivo_nao_realizacao VARCHAR(255),
+        documento VARCHAR(255) NOT NULL,
+        created_at TIMESTAMP,
+        updated_at TIMESTAMP
+    );
+    
+    
+    GRANT ALL ON TABLE tat TO public;
+    GRANT ALL ON TABLE taf TO public;
     GRANT ALL ON TABLE experiencia_profissional TO public;
     GRANT ALL ON TABLE pessoa_experiencia_profissional TO public;
     GRANT ALL ON TABLE pessoa_atividade TO public;
@@ -224,7 +252,5 @@ BEGIN;
     GRANT ALL ON TABLE pessoa TO public;
     GRANT ALL ON TABLE pessoa_contato TO public;
     GRANT ALL ON TABLE pessoa_condecoracao TO public;
-
-
     GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO public;
 COMMIT;

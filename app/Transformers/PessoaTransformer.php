@@ -58,7 +58,10 @@ class PessoaTransformer extends TransformerAbstract
         return $this->item($pessoa->formacao, New FormacaoTransformer());
     }
     public function includeBairro(Pessoa $pessoa) {
-        return $this->item($pessoa->bairro, New BairroTransformer());
+        if($pessoa->bairro){
+            return $this->item($pessoa->bairro, New BairroTransformer());
+        }
+        
     }
     public function includeMunicipio(Pessoa $pessoa) {
         return $this->item($pessoa->municipio, New MunicipioTransformer());

@@ -1,1 +1,5 @@
+
 /vendor/
+nbproject/
+.gitignore
+public/build

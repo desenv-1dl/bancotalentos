@@ -3,7 +3,7 @@ var app = angular.module('app', [
     'ngRoute', 'flash', 'ui-leaflet', 'ui.utils.masks', 'nemLogging', 'angular-oauth2',
     'app.controllers', 'app.services', 'app.filters',
     'ui.bootstrap.typeahead', 'ui.bootstrap.datepicker', 'ui.bootstrap', 'ui.bootstrap.tpls',
-    'ui.grid', 'ui.grid.treeView', 'ngFileUpload'
+    'ui.grid', 'ui.grid.treeView', 'ngFileUpload','ngMask'
 ]);
 
 angular.module('app.controllers', ['ngMessages', 'ngAnimate', 'angular-oauth2', 'ui-leaflet', 'ui.bootstrap']);

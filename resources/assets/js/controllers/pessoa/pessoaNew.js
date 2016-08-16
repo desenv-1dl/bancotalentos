@@ -12,9 +12,7 @@ angular.module('app.controllers')
             $scope.bairros = [];
             $scope.municipios = [];
             
-            $scope.format = 'dd/MM/yyyy';
-            $scope.date = new Date();
-            
+           
             //PESSOA-CONTATO INICIO
 //            $scope.pessoasContatos = [];
 //            $scope.contatos = [];
