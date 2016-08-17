@@ -14,13 +14,13 @@
                     <!-- INICIO DO CONTAINER-->
                     
                     <div class="container" ng-app ng-init="tab=1">
-                    <div class="btn-group btn-group-justified">
-                        <a class="btn btn-primary" ng-click="tab=1" ng-class="{'active' : tab==1}"> Informações Básicas</a>
-                        <a class="btn btn-primary" ng-click="tab=2" ng-class="{'active' : tab==2}"> Contatos</a>
-                        <a class="btn btn-primary" ng-click="tab=3" ng-class="{'active' : tab==3}"> Condecorações</a>
-                        <a class="btn btn-primary" ng-click="tab=4" ng-class="{'active' : tab==4}"> Cursos</a>
-                        <a class="btn btn-primary" ng-click="tab=5" ng-class="{'active' : tab==5}"> Habilidades</a>
-                    </div>
+                    <ul class="tabs-nav">
+                        <li><a class="btn-danger" ng-click="tab=1" ng-class="{'active' : tab==1}"> Informações Básicas</a></li>
+                        <li><a class="btn-danger" ng-click="tab=2" ng-class="{'active' : tab==2}"> Contatos</a></li>
+                        <li><a class="btn-danger" ng-click="tab=3" ng-class="{'active' : tab==3}"> Condecorações</a></li>
+                        <li><a class="btn-danger" ng-click="tab=4" ng-class="{'active' : tab==4}"> Cursos</a></li>
+                        <li><a class="btn-danger" ng-click="tab=5" ng-class="{'active' : tab==5}"> Habilidades</a></li>
+                    </ul>
                     <div class="tabs-container col-md-12">
                         <div class="tab-content" ng-show="tab == 1">
                             <ul>
