@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12" >
-            <div class="panel panel-default">
+            <div class="panel panel-default" style="height:">
                 <div class="panel-heading">
                     <h4>Listagem de Pessoas</h4>
                     <a ng-href="#/pessoas/new" class="btn btn-success">
@@ -14,7 +14,7 @@
                         <strong>Whoops!</strong> Ocorreu um erro.<br><br>
                         <div>{{ error.message }}</div>
                     </div>
-                    <div ui-grid="gridOptions"></div>
+                    <div ui-grid="gridOptions" style="height: 500px"></div>
                     <script>
                         $('#flash-overlay-modal').modal();
                     </script>

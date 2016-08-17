@@ -165,13 +165,13 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse" style="background-color: 2F4F4F">
                 <ul class="nav navbar-nav side-nav">
                     <li>                     
-                        <a ng-href="/#/home"><i class="fa fa-fw fa-home"></i> Home</a>
+                        <a ng-href="/#/home" style="color: #FFFFFF"><i class="fa fa-fw fa-home"></i> Home</a>
                     </li>
                     <li>
-                        <a ng-href="./#/pessoas"><i class="fa fa-fw fa-users"></i> Pessoas</a>
+                        <a ng-href="./#/pessoas" style="color: #FFFFFF"><i class="fa fa-fw fa-users"></i> Pessoas</a>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-trophy"></i> Condecorações <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo1" style="color: #FFFFFF"><i class="fa fa-fw fa-trophy"></i> Condecorações <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo1" class="collapse">
                             <li>
                                 <a ng-href="./#/condecoracoes">Lista de Condecorações</a>
@@ -182,7 +182,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-mortar-board"></i> Cursos/Estágios <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo2" style="color: #FFFFFF"><i class="fa fa-fw fa-mortar-board"></i> Cursos/Estágios <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo2" class="collapse">
                             <li>
                                 <a ng-href="./#/modalidades">Lista de Modalidades</a>
@@ -196,7 +196,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo3"><i class="fa fa-fw fa-suitcase"></i> Experiência Profissional <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo3" style="color: #FFFFFF"><i class="fa fa-fw fa-suitcase"></i> Experiência Profissional <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo3" class="collapse">
                             <li>
                                 <a ng-href="./#/experiencias-profissionais">Lista de Experiências Profissionais</a>
@@ -504,7 +504,8 @@
 
         <!--</div>-->
         <!-- /#page-wrapper -->
-
+    <div>
+        
     </div>
 
 <!--    <div>
@@ -520,6 +521,7 @@
     <script src="{{ asset('build/js/vendor/jquery.min.js')}}"></script>
     <script src="{{ asset('build/js/vendor/bootstrap.min.js')}}"></script>
     <script src="{{ asset('build/js/vendor/angular.min.js')}}"></script>
+    <script src="{{ asset('ngMask.min.js')}}"></script>
     <script src="{{ asset('build/js/vendor/angular-route.min.js')}}"></script>
     <script src="{{ asset('build/js/vendor/angular-resource.min.js')}}"></script>
     <script src="{{ asset('build/js/vendor/angular-animate.min.js')}}"></script>

@@ -1,7 +1,7 @@
 angular.module('app.controllers')
     .controller('PessoaEditController',
-        ['$scope', '$location', '$routeParams', 'Pessoa','Bairro','Municipio','UnidadeFederacao','NivelFuncional','Organizacao','Genero','Formacao','Contato','PessoaContato',
-            function($scope, $location, $routeParams, Pessoa,Bairro,Municipio,UnidadeFederacao,NivelFuncional,Organizacao,Genero,Formacao,Contato,PessoaContato){
+        ['$scope','$filter', '$location', '$routeParams', 'Pessoa','Bairro','Municipio','UnidadeFederacao','NivelFuncional','Organizacao','Genero','Formacao','Contato','PessoaContato',
+            function($scope, $filter, $location, $routeParams, Pessoa,Bairro,Municipio,UnidadeFederacao,NivelFuncional,Organizacao,Genero,Formacao,Contato,PessoaContato){
             
 //PESSOA-CONTATO INICIO
 //            $scope.pessoasContatos = [];
@@ -52,6 +52,7 @@ angular.module('app.controllers')
                 Pessoa.get({id: $routeParams.id}).$promise.then(function(pessoa) {
                 // success
                 $scope.pessoa =  pessoa;
+                $scope.pessoa.data_nascimento = $filter('date')($scope.pessoa.data_nascimento, "dd/MM/yyyy");
 
                 Municipio.query({
                     search: 'unidade_federacao_id:'+pessoa.municipio.data.unidade_federacao_id
