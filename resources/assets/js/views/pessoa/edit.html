@@ -3,8 +3,19 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading"><h4>Editar de Pessoas</h4>
+<<<<<<< HEAD
                 <div class="collapse navbar-collapse btn-group" id="navbar">
                         
+=======
+                <div class="collapse navbar-collapse" id="navbar">
+                    <div class="btn-group btn-group-justified">
+                        <a class="btn btn-primary" ng-href="#/pessoas-contatos/{{pessoa.id}}/new"><span class="glyphicon glyphicon-plus"></span> Contato</a>
+                        <a class="btn btn-success" ng-href="#/pessoas-atividades/{{pessoa.id}}/new"><span class="glyphicon glyphicon-plus"></span> Atividade</a>
+                        <a class="btn btn-warning" ng-href="#/pessoas-condecoracoes/{{pessoa.id}}/new"><span class="glyphicon glyphicon-plus"></span> Condecoração</a>
+                        <a class="btn btn-danger" ng-href="#/pessoas-experiencias-profissionais/{{pessoa.id}}/new"><span class="glyphicon glyphicon-plus"></span> Experiência Profissional</a>
+                        
+                    </div>
+>>>>>>> 4a2ac86e5ad877fea46d3b776e49e6c60389e68c
                     
                     
                     
@@ -173,8 +184,9 @@
                                         ng-change="getMunicipios()"
                                         ng-model="unidade_federacao_id"
                                         ng-options="unidadeFederacao.id as unidadeFederacao.nome for unidadeFederacao in unidadesFederacao"
-                                        >
+                                        >									
                                 </select>
+					<a type="button" class="btn btn-sm btn-default glyphicon glyphicon-plus" href="{{'#/unidades-federacao/new'}}" ></a>
                                 <div ng-messages="form.unidade_federacao_id.$error" class="help-block" ng-show="form.unidade_federacao_id.$touched">
                                     <div ng-message="required">Campo Obrigatório</div>
                                 </div>
@@ -187,8 +199,9 @@
                                         ng-change="getBairros()"
                                         ng-model="pessoa.municipio_id"
                                         ng-options="municipio.id as municipio.nome for municipio in municipios"
-                                        >
+                                        >									
                                 </select>
+					<a type="button" class="btn btn-sm btn-default glyphicon glyphicon-plus" href="{{'#/municipios/new'}}" ></a>
                                 <div ng-messages="form.municipio_id.$error" class="help-block" ng-show="form.municipio_id.$touched">
                                     <div ng-message="required">Campo Obrigatório</div>
                                 </div>
@@ -200,8 +213,9 @@
                                 <select class="form-control"
                                         ng-model="pessoa.bairro_id"
                                         ng-options="bairro.id as bairro.nome for bairro in bairros"
-                                        >
+                                        >									
                                 </select>
+				<a type="button" class="btn btn-sm btn-default glyphicon glyphicon-plus" href="{{'#/bairros/new'}}" ></a>
                                 <div ng-messages="form.bairro_id.$error" class="help-block" ng-show="form.bairro_id.$touched">
                                     <div ng-message="required">Campo Obrigatório</div>
                                 </div>

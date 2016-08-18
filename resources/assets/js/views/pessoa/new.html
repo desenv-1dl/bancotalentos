@@ -151,6 +151,7 @@
                                         ng-options="unidadeFederacao.id as unidadeFederacao.nome for unidadeFederacao in unidadesFederacao"
                                         >
                                 </select>
+								 <a type="button" class="btn btn-sm btn-default glyphicon glyphicon-plus" href="{{'#/unidades-federacao/new'}}" ></a>
                                 <div ng-messages="form.unidade_federacao_id.$error" class="help-block" ng-show="form.unidade_federacao_id.$touched">
                                     <div ng-message="required">Campo Obrigatório</div>
                                 </div>
@@ -165,6 +166,7 @@
                                         ng-options="municipio.id as municipio.nome for municipio in municipios"
                                         >
                                 </select>
+								<a type="button" class="btn btn-sm btn-default glyphicon glyphicon-plus" href="{{'#/municipios/new'}}" ></a>
                                 <div ng-messages="form.municipio_id.$error" class="help-block" ng-show="form.municipio_id.$touched">
                                     <div ng-message="required">Campo Obrigatório</div>
                                 </div>
@@ -178,6 +180,7 @@
                                         ng-options="bairro.id as bairro.nome for bairro in bairros"
                                         >
                                 </select>
+								<a type="button" class="btn btn-sm btn-default glyphicon glyphicon-plus" href="{{'#/bairros/new'}}" ></a>
                                 <div ng-messages="form.bairro_id.$error" class="help-block" ng-show="form.bairro_id.$touched">
                                     <div ng-message="required">Campo Obrigatório</div>
                                 </div>
