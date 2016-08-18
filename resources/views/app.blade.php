@@ -22,8 +22,12 @@
         <link href="{{ asset('build/css/vendor/leaflet.fullscreen.css')}}" rel="stylesheet" />
         <link href="{{ asset('build/css/startbootstrap-sb-admin/css/bootstrap.min.css')}}" rel="stylesheet" />
         <link href="{{ asset('build/css/startbootstrap-sb-admin/css/plugins/morris.css')}}" rel="stylesheet" />
+        
         <link href="{{ asset('build/css/startbootstrap-sb-admin/css/sb-admin.css')}}" rel="stylesheet" />
+        
         <link href="{{ asset('build/css/startbootstrap-sb-admin/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" />
+        
+        
         @else
         <link href="{{ elixir('css/all.css')}}" rel="stylesheet" />
         @endif
