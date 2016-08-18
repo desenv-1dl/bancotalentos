@@ -8,7 +8,7 @@
 
 body {
     margin-top: 100px;
-    background-color: #2F4F4F;
+    background-color: #FFFFFF;
 }
 
 @media(min-width:768px) {
@@ -126,6 +126,7 @@ ul.alert-dropdown {
         bottom: 0;
         overflow-x: hidden;
         padding-bottom: 40px;
+        z-index: -20
     }
 
     .side-nav>li>a {
@@ -147,7 +148,7 @@ ul.alert-dropdown {
     display: block;
     padding: 10px 15px 10px 38px;
     text-decoration: none;
-    color: #999;
+    color: #FFFFFF;
 }
 
 .side-nav>li>ul>li>a:hover {
