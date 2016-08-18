@@ -2,23 +2,23 @@
 
 namespace Sip\Http\Controllers;
 
-use Sip\Repositories\BairroRepository;
-use Sip\Services\BairroService;
+use Sip\Repositories\TafRepository;
+use Sip\Services\TafService;
 use Illuminate\Http\Request;
 
-class BairroController extends Controller
+class TafController extends Controller
 {
-    /** @var BairroRepository $repository */
+    /** @var TafRepository $repository */
     private $repository;
 
-    /** @var BairroService $service */
+    /** @var TafService $service */
     private $service;
 
     /**
-     * BairroController constructor.
-     * @param \Sip\Repositories\BairroRepository $repository
+     * TafController constructor.
+     * @param \Sip\Repositories\TafRepository $repository
      */
-    public function __construct(BairroRepository $repository, BairroService $service)
+    public function __construct(TafRepository $repository, TafService $service)
     {
         $this->repository = $repository;
         $this->service = $service;

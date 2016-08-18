@@ -9,28 +9,28 @@
 namespace Sip\Services;
 
 
-use Sip\Repositories\BairroRepository;
-use Sip\Validators\BairroValidator;
+use Sip\Repositories\TafRepository;
+use Sip\Validators\TafValidator;
 use Prettus\Validator\Exceptions\ValidatorException;
 
-class BairroService
+class TafService
 {
     /**
-     * @var BairroRepository $repository
+     * @var TafRepository $repository
      */
     protected $repository;
 
     /**
-     * @var BairroValidator $validator
+     * @var TafValidator $validator
      */
     private $validator;
 
 
     /**
-     * BairroService constructor.
-     * @param BairroRepository $repository
+     * TafService constructor.
+     * @param TafRepository $repository
      */
-    public function __construct(BairroRepository $repository, BairroValidator $validator)
+    public function __construct(TafRepository $repository, TafValidator $validator)
     {
         $this->repository = $repository;
         $this->validator = $validator;
