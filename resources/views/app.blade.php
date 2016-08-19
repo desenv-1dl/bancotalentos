@@ -20,7 +20,7 @@
         <link href="{{ asset('build/css/vendor/leaflet.fusesearch.css')}}" rel="stylesheet" />
         <link href="{{ asset('build/css/vendor/leaflet.measurecontrol.css')}}" rel="stylesheet" />
         <link href="{{ asset('build/css/vendor/leaflet.fullscreen.css')}}" rel="stylesheet" />
-		<link href="{{ asset('build/css/startbootstrap-sb-admin/css/bootstrap.min.css')}}" rel="stylesheet" />
+        <!--<link href="{{ asset('build/css/startbootstrap-sb-admin/css/bootstrap.min.css')}}" rel="stylesheet" />-->
         <link href="{{ asset('build/css/startbootstrap-sb-admin/css/plugins/morris.css')}}" rel="stylesheet" />
         
         <link href="{{ asset('build/css/startbootstrap-sb-admin/css/sb-admin.css')}}" rel="stylesheet" />
@@ -51,9 +51,9 @@
         <div id="wrapper">
 
         <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: 2F4F4F">
+        <nav style="background-color: 2F4F4F !important" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
+            <div style="background-color: 2F4F4F !important" class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -164,7 +164,7 @@
                 </li>
             </ul>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse" style="background-color: 2F4F4F">
+            <div class="collapse navbar-collapse navbar-ex1-collapse" style="background-color: 2F4F4F !important">
                 <ul class="nav navbar-nav side-nav">
                     <li>                     
                         <a ng-href="/#/home" style="color: white"><i class="fa fa-fw fa-home"></i> Home</a>
@@ -692,18 +692,23 @@
     <script src="{{ asset('build/js/services/safeCtrl.js')}}"></script>
     <script src="{{ asset('build/js/services/formatCtrl.js')}}"></script>
 
-	<script src="{{ asset('js/startbootstrap-sb-admin/js/plugins/morris/morris-data.js')}}"></script>
+    <script src="{{ asset('js/startbootstrap-sb-admin/js/plugins/morris/morris-data.js')}}"></script>
     <script src="{{ asset('js/startbootstrap-sb-admin/js/plugins/morris/morris.js')}}"></script>
     <script src="{{ asset('js/startbootstrap-sb-admin/js/plugins/morris/raphael.min.js')}}"></script>
     @else
     <script src="{{ elixir('js/all.js')}}"></script>
     @endif
-    <div class="col-md-12" id="copyright text-right" style="background: #2F4F4F;color: white">
+    <div class="col-md-12" id="copyright text-right" style="background: #2F4F4F;color: white;position:fixed;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    height:50px;
+    margin-bottom:0px;">
         <div class="footer col-md-2">
-            Base de dados de Informações de Pessoal da 1ª Divisão de Levantamento
+            
         </div>
         <div class="col-md-9">
-            
+            <p class="text-center">Base de dados de Informações de Pessoal da 1ª Divisão de Levantamento</p>
         </div>
         <div class="col-md-1">
             <h6>Versão Beta</h6>
