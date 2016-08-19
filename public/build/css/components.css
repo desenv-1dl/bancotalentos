@@ -7918,10 +7918,10 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 .navbar-inverse {
   border-color: #080808;
-  background-color: #222;
+  background-color: #2F4F4F;
 }
 .navbar-inverse .navbar-brand {
-  color: #9d9d9d;
+  color: white;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
