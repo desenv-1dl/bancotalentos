@@ -51,20 +51,26 @@
         <div id="wrapper">
 
         <!-- Navigation -->
-        <nav style="background-color: 2F4F4F !important" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div style="background-color: 2F4F4F !important" class="navbar-header">
+            <div class="col-md-1">
+                <img src="{{asset('build/images/logo_1dl.png')}}" class="img-rounded" style="width: 80px;height: 80px"/>
+            </div>
+            <div class="col-md-7" style="margin-left: -15px;margin-top: 15px">
+                <a class="navbar-brand text-left" ng-href="/#/home"><strong> Banco de Talentos</strong> Sistema de Informações de Pessoal da 1ª Divisão de Levantamento</a>
+            </div>
+            <div class="navbar-header col-md-1">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" ng-href="/#/home"><strong> Banco de Talentos</strong> Sistema de Informações de Pessoal da 1ª Divisão de Levantamento</a>
             </div>
             <!-- Top Menu Items -->
+            <div class="col-md-3">
             <ul class="nav navbar-right top-nav">
-                <li class="dropdown">
+<!--                <li class="dropdown">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown" style="color: white"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu message-dropdown">
                         <li class="message-preview">
@@ -143,9 +149,9 @@
                             <a href="">View All</a>
                         </li>
                     </ul>
-                </li>
+                </li>-->
                 <li class="dropdown">
-                    <a style="color: white" href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+                    <a style="color: white" href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> User <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href=""><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -163,6 +169,7 @@
                     </ul>
                 </li>
             </ul>
+            </div>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse" style="background-color: 2F4F4F !important">
                 <ul class="nav navbar-nav side-nav">
@@ -228,7 +235,7 @@
         <!--<div id="page-wrapper" style="background: red">-->
 
 <!--            <div class="container-fluid" >-->
-                <div ng-view style="height: 100%">
+                <div ng-view style="height: 100%;margin-top: 100px;margin-bottom: 30px">
    
 
                 </div>
@@ -708,7 +715,7 @@
             
         </div>
         <div class="col-md-9">
-            <p class="text-center">Base de dados de Informações de Pessoal da 1ª Divisão de Levantamento</p>
+            <p class="text-center" style="margin-top: 15px">Base de dados de Informações de Pessoal da 1ª Divisão de Levantamento</p>
         </div>
         <div class="col-md-1">
             <h6>Versão Beta</h6>
