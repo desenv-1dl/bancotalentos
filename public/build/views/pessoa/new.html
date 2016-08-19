@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading"><h4>Cadastro de Pessoas</h4></div>
                 <div class="panel-body">
@@ -97,7 +97,10 @@
                         <div class="form-group" ng-class="{'has-error' : !form.data_nascimento.$valid && form.data_nascimento.$touched}">
                             <label class="col-md-4 control-label">Data de nascimento</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="data_nascimento" ng-model="pessoa.data_nascimento" ui-date-mask required>
+                                <input type="text" class="form-control" name="data_nascimento" 
+                                       ng-model="pessoa.data_nascimento"  
+                                       mask="39/19/9999"
+                                       required>
                                 <div ng-messages="form.data_nascimento.$error" class="help-block" ng-show="form.data_nascimento.$touched">
                                     <div ng-message="required">Campo Obrigatório</div>
                                 </div>
@@ -148,6 +151,7 @@
                                         ng-options="unidadeFederacao.id as unidadeFederacao.nome for unidadeFederacao in unidadesFederacao"
                                         >
                                 </select>
+								 <a type="button" class="btn btn-sm btn-default glyphicon glyphicon-plus" href="{{'#/unidades-federacao/new'}}" ></a>
                                 <div ng-messages="form.unidade_federacao_id.$error" class="help-block" ng-show="form.unidade_federacao_id.$touched">
                                     <div ng-message="required">Campo Obrigatório</div>
                                 </div>
@@ -162,6 +166,7 @@
                                         ng-options="municipio.id as municipio.nome for municipio in municipios"
                                         >
                                 </select>
+								<a type="button" class="btn btn-sm btn-default glyphicon glyphicon-plus" href="{{'#/municipios/new'}}" ></a>
                                 <div ng-messages="form.municipio_id.$error" class="help-block" ng-show="form.municipio_id.$touched">
                                     <div ng-message="required">Campo Obrigatório</div>
                                 </div>
@@ -175,6 +180,7 @@
                                         ng-options="bairro.id as bairro.nome for bairro in bairros"
                                         >
                                 </select>
+								<a type="button" class="btn btn-sm btn-default glyphicon glyphicon-plus" href="{{'#/bairros/new'}}" ></a>
                                 <div ng-messages="form.bairro_id.$error" class="help-block" ng-show="form.bairro_id.$touched">
                                     <div ng-message="required">Campo Obrigatório</div>
                                 </div>

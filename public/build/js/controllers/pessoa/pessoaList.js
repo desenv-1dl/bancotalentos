@@ -24,7 +24,7 @@ angular.module('app.controllers')
                     cellTemplate : '<menu-acao></menu-acao>'
                 }
             ]
-        }; //
+        };
 
         $scope.gridOptions.onRegisterApi = function(gridApi){
             $scope.gridApi = gridApi;

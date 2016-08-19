@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4>Edição de condecorações</h4>
@@ -21,7 +21,7 @@
                             </div>
                         </div>
                         <div class="form-group" ng-class="{'has-error' : !form.nome_abrev.$valid && form.nome_abrev.$touched}">
-                            <label class="col-md-4 control-label">Sigla</label>
+                            <label class="col-md-4 control-label">Sigla/Código</label>
                             <div class="col-md-6">
                                 <input type="text" class="form-control" name="nome_abrev" ng-model="condecoracao.nome_abrev" required>
                                 <div ng-messages="form.nome_abrev.$error" class="help-block" ng-show="form.nome_abrev.$touched">
