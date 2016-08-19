@@ -715,11 +715,9 @@
             
         </div>
         <div class="col-md-9">
-<<<<<<< HEAD
+
             <p class="text-center" style="margin-top: 15px">Base de dados de Informações de Pessoal da 1ª Divisão de Levantamento</p>
-=======
-			<p class="text-center">Base de dados de Informações de Pessoal da 1ª Divisão de Levantamento</p>
->>>>>>> 6e0d0b5e0b42d3053ff874c2650bdec2681dab4b
+
         </div>
         <div class="col-md-1">
             <h6>Versão Beta</h6>
