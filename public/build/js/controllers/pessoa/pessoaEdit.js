@@ -1,7 +1,7 @@
 angular.module('app.controllers')
     .controller('PessoaEditController',
         ['$scope','$filter', '$location', '$routeParams', 'Pessoa','Bairro','Municipio','UnidadeFederacao','NivelFuncional','Organizacao','Genero','Formacao','Contato','PessoaContato',
-            function($scope, $filter,$location, $routeParams, Pessoa,Bairro,Municipio,UnidadeFederacao,NivelFuncional,Organizacao,Genero,Formacao,Contato,PessoaContato){
+            function($scope, $filter, $location, $routeParams, Pessoa,Bairro,Municipio,UnidadeFederacao,NivelFuncional,Organizacao,Genero,Formacao,Contato,PessoaContato){
             
 //PESSOA-CONTATO INICIO
 //            $scope.pessoasContatos = [];
@@ -53,7 +53,6 @@ angular.module('app.controllers')
                 // success
                 $scope.pessoa =  pessoa;
                 $scope.pessoa.data_nascimento = $filter('date')($scope.pessoa.data_nascimento, "dd/MM/yyyy");
-                //console.log($scope.pessoa.data_nascimento);
 
                 Municipio.query({
                     search: 'unidade_federacao_id:'+pessoa.municipio.data.unidade_federacao_id
@@ -101,6 +100,8 @@ angular.module('app.controllers')
             }, function(errResponse) {
                 // fail
             });
+            
+            
 
             NivelFuncional.query().$promise.then(function(niveisFuncionais) {
                 // success

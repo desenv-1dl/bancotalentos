@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4>Editar Condecoração de Pessoa</h4>
@@ -40,10 +40,7 @@
                         <div class="form-group" ng-class="{'has-error' : !form.data_indicacao.$valid && form.data_indicacao.$touched}">
                             <label class="col-md-4 control-label">Data da Indicação</label>
                             <div class="col-md-2">
-                                <input type="text" class="form-control" name="data_indicacao" 
-                                       ng-model="pessoaCondecoracao.data_indicacao"
-                                       mask="39/19/9999"
-                                       >
+                                <input type="text" class="form-control" name="data_indicacao" ng-model="pessoaCondecoracao.data_indicacao | dateBr" required>
                                 <div ng-messages="form.data_indicacao.$error" class="help-block" ng-show="form.data_indicacao.$touched">
                                     <div ng-message="required">Campo Obrigatório</div>
                                 </div>
@@ -54,14 +51,14 @@
                         <div class="form-group" ng-class="{'has-error' : !form.data_condecoracao.$valid && form.data_condecoracao.$touched}">
                             <label class="col-md-4 control-label">Data da Condecoração</label>
                             <div class="col-md-2">
-                                <input type="text" class="form-control" name="data_condecoracao" ng-model="pessoaCondecoracao.data_condecoracao"
-                                       mask="39/19/9999"
-                                       required>
+                                <input type="text" class="form-control" name="data_condecoracao" ng-model="pessoaCondecoracao.data_condecoracao | dateBr" required>
                                 <div ng-messages="form.data_condecoracao.$error" class="help-block" ng-show="form.data_condecoracao.$touched">
                                     <div ng-message="required">Campo Obrigatório</div>
                                 </div>
                             </div>
                         </div>
+
+
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">

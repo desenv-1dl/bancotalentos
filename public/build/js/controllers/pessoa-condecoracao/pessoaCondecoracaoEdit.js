@@ -1,16 +1,13 @@
 angular.module('app.controllers')
     .controller('PessoaCondecoracaoEditController',
-        ['$scope', '$filter','$location', '$routeParams', 'PessoaCondecoracao','Pessoa','Condecoracao',
-            function($scope,$filter, $location, $routeParams, PessoaCondecoracao,Pessoa, Condecoracao){
+        ['$scope', '$location', '$routeParams', 'PessoaCondecoracao','Pessoa','Condecoracao',
+            function($scope, $location, $routeParams, PessoaCondecoracao,Pessoa, Condecoracao){
                 PessoaCondecoracao.get({id: $routeParams.id}).$promise.then(function(pessoaCondecoracao){
                     $scope.pessoaCondecoracao = pessoaCondecoracao;
-                    $scope.pessoaCondecoracao.data_indicacao = $filter('date')($scope.pessoaCondecoracao.data_indicacao, "dd/MM/yyyy");
-                    $scope.pessoaCondecoracao.data_condecoracao = $filter('date')($scope.pessoaCondecoracao.data_condecoracao, "dd/MM/yyyy");
                     
                     Pessoa.query({
                     search:'id:'+$scope.pessoaCondecoracao.pessoa_id}).$promise.then(function(pessoa){
                         $scope.pessoa = pessoa;
-                        
                     });
                 });
                 
@@ -22,6 +19,8 @@ angular.module('app.controllers')
             }, function(errResponse) {
                 // fail
          });
+                
+                    
 
                 $scope.save = function () {
 
