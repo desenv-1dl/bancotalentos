@@ -698,7 +698,12 @@
     @else
     <script src="{{ elixir('js/all.js')}}"></script>
     @endif
-    <div class="col-md-12" id="copyright text-right" style="background: #2F4F4F;color: white">
+    <div class="col-md-12" id="copyright text-right" style="background: #222222;color: white;position:fixed;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    height:50px;
+    margin-bottom:0px;">
         <div class="footer col-md-2">
             Base de dados de Informações de Pessoal da 1ª Divisão de Levantamento
         </div>

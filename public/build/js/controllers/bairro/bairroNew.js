@@ -16,20 +16,20 @@ angular.module('app.controllers')
                         // fail
                     });
                     
-//                    $scope.getMunicipios = function(){
-//                        var id = $scope.unidade_federacao_id;
-//                        
-//                        Municipio.query({
-//                        search: 'unidade_federacao_id:'+id
-//                        }).$promise.then(function(municipios) {
-//                        // success
-//                            $scope.municipios = municipios;
-//                            $scope.municipios.unshift({ id: 0, nome: ' -- Selecione -- ' });
-//                            
-//                        }, function(errResponse) {
-//                        // fail
-//                        });
-//                    }
+                    $scope.getMunicipios = function(){
+                        var id = $scope.unidade_federacao_id;
+                       
+                       Municipio.query({
+                       search: 'unidade_federacao_id:'+id
+                       }).$promise.then(function(municipios) {
+                       // success
+                           $scope.municipios = municipios;
+                           $scope.municipios.unshift({ id: 0, nome: ' -- Selecione -- ' });
+                           
+                        }, function(errResponse) {
+                        // fail
+                        });
+                    }
                     $scope.save = function () {
                         if($scope.form.$valid){
                             $scope.bairro.$save().then(function (){
