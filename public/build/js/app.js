@@ -133,7 +133,7 @@ app.config([
             controller: 'IndexController'
         })
         .when('/home',{
-            templateUrl: 'build/views/home.html',
+            templateUrl: 'build/views/index.html',
             controller: 'HomeController'
         })
 //        ATIVIDADE
