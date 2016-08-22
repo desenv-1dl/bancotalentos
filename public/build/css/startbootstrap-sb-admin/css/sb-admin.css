@@ -124,7 +124,7 @@ ul.alert-dropdown {
         border-radius: 0;
         overflow-y: auto;
         background-color: #2F4F4F;
-        bottom: 40px;  /* aqui muda a margem do menu lateral */
+        bottom: 0px;  /* aqui muda a margem do menu lateral */
         overflow-x: hidden;
         padding-bottom: 40px;
         z-index: -20

@@ -20,7 +20,7 @@
         <link href="{{ asset('build/css/vendor/leaflet.fusesearch.css')}}" rel="stylesheet" />
         <link href="{{ asset('build/css/vendor/leaflet.measurecontrol.css')}}" rel="stylesheet" />
         <link href="{{ asset('build/css/vendor/leaflet.fullscreen.css')}}" rel="stylesheet" />
-        <!--<link href="{{ asset('build/css/startbootstrap-sb-admin/css/bootstrap.min.css')}}" rel="stylesheet" />-->
+        <link href="{{ asset('build/css/startbootstrap-sb-admin/css/bootstrap.min.css')}}" rel="stylesheet" />
         <link href="{{ asset('build/css/startbootstrap-sb-admin/css/plugins/morris.css')}}" rel="stylesheet" />
         
         <link href="{{ asset('build/css/startbootstrap-sb-admin/css/sb-admin.css')}}" rel="stylesheet" />
@@ -153,11 +153,6 @@
                 </div>
     <!-- Scripts -->
     @if(Config::get('app.debug'))
-    
-    <script src="{{ asset('build/js/startbootstrap-sb-admin/js/plugins/morris/morris-data.js')}}"></script>
-    <script src="{{ asset('build/js/startbootstrap-sb-admin/js/plugins/morris/morris.js')}}"></script>
-    <script src="{{ asset('build/js/startbootstrap-sb-admin/js/plugins/morris/raphael.min.js')}}"></script>
-    
     <script src="{{ asset('build/js/vendor/jquery.min.js')}}"></script>
     <script src="{{ asset('build/js/vendor/bootstrap.min.js')}}"></script>
     <script src="{{ asset('build/js/vendor/angular.min.js')}}"></script>
@@ -349,11 +344,13 @@
     <script src="{{ asset('build/js/services/safeCtrl.js')}}"></script>
     <script src="{{ asset('build/js/services/formatCtrl.js')}}"></script>
 
-    
+    <script src="{{ asset('build/js/startbootstrap-sb-admin/js/plugins/morris/morris-data.js')}}"></script>
+    <script src="{{ asset('build/js/startbootstrap-sb-admin/js/plugins/morris/morris.js')}}"></script>
+    <script src="{{ asset('build/js/startbootstrap-sb-admin/js/plugins/morris/raphael.min.js')}}"></script>
     @else
     <script src="{{ elixir('js/all.js')}}"></script>
     @endif
-    <div class="col-md-12" id="copyright text-right" style="background: #1F1F1F;color: white;position:fixed;
+<!--    <div class="col-md-12" id="copyright text-right" style="background: #1F1F1F;color: white;position:fixed;
     bottom:0px;
     left:0px;
     right:0px;
@@ -372,7 +369,7 @@
         </div>
         
         
-    </div>
+    </div>-->
 </body>
 </html>
 
