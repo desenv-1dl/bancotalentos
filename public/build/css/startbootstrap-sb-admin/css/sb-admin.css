@@ -54,6 +54,7 @@ body {
 }
 
 .top-nav>li>a {
+    margin-top: 10px;   /*mudei a margem navbar aqui  */
     padding-top: 15px;
     padding-bottom: 15px;
     line-height: 20px;
@@ -66,7 +67,7 @@ body {
 .top-nav>.open>a:hover,
 .top-nav>.open>a:focus {
     color: #fff;
-    background-color: #000;
+    background-color: black;  /* aqui muda a cor da barra de navegacao */
 }
 
 .top-nav>.open>.dropdown-menu {
@@ -115,7 +116,7 @@ ul.alert-dropdown {
 @media(min-width:768px) {
     .side-nav {
         position: fixed;
-        top: 80px;
+        top: 66px;  /* aqui muda a margem do menu lateral */
         left: 225px;
         width: 225px;
         margin-left: -225px;
@@ -123,7 +124,7 @@ ul.alert-dropdown {
         border-radius: 0;
         overflow-y: auto;
         background-color: #2F4F4F;
-        bottom: 0;
+        bottom: 40px;  /* aqui muda a margem do menu lateral */
         overflow-x: hidden;
         padding-bottom: 40px;
         z-index: -20

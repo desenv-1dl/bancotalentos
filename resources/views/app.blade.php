@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Sistema de Informação de Pessoas</title>
         @if(Config::get('app.debug'))
-        <link href="{{ asset('build/css/app.css')}}" rel="stylesheet" />
+        <!--<link href="{{ asset('build/css/app.css')}}" rel="stylesheet" />-->
         <link href="{{ asset('build/css/components.css')}}" rel="stylesheet" />
         <link href="{{ asset('build/css/flaticon.css')}}" rel="stylesheet" />
         <link href="{{ asset('build/css/fonts.css')}}" rel="stylesheet" />
@@ -54,7 +54,7 @@
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="col-md-1">
-                <img src="{{asset('build/images/logo_1dl.png')}}" class="img-rounded" style="width: 80px;height: 80px"/>
+                <img src="{{asset('build/images/logo_1dl.png')}}" class="img-rounded" style="width: 65px;height: 65px"/>
             </div>
             <div class="col-md-7" style="margin-left: -15px;margin-top: 15px">
                 <a class="navbar-brand text-left" ng-href="/#/home"><strong> Banco de Talentos</strong> Sistema de Informações de Pessoal da 1ª Divisão de Levantamento</a>
@@ -705,11 +705,11 @@
     @else
     <script src="{{ elixir('js/all.js')}}"></script>
     @endif
-    <div class="col-md-12" id="copyright text-right" style="background: #2F4F4F;color: white;position:fixed;
+    <div class="col-md-12" id="copyright text-right" style="background: #1F1F1F;color: white;position:fixed;
     bottom:0px;
     left:0px;
     right:0px;
-    height:50px;
+    height:40px;
     margin-bottom:0px;">
         <div class="footer col-md-2">
             
