@@ -25,6 +25,7 @@
                                         ng-options="contato.id as contato.nome for contato in contatos"
                                         >
                                 </select>
+                                <a type="button" class="btn btn-sm btn-default glyphicon glyphicon-plus" href="{{'#/contatos'}}" ></a>
                                 <div ng-messages="form.contato_id.$error" class="help-block" ng-show="form.contato_id.$touched">
                                     <div ng-message="required">Campo Obrigatório</div>
                                 </div>

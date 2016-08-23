@@ -50,6 +50,7 @@
                                         ng-options="instituicao.id as instituicao.nome for instituicao in instituicoes"
                                         >
                                 </select>
+                                <a type="button" class="btn btn-sm btn-default glyphicon glyphicon-plus" href="{{'#/instituicoes/new'}}" ></a>
                                 <div ng-messages="form.instituicao_id.$error" class="help-block" ng-show="form.instituicao_id.$touched">
                                     <div ng-message="required">Campo Obrigatório</div>
                                 </div>
