@@ -10,7 +10,7 @@
     "amd"
   ],
   "homepage": "",
-  "directory": "resources/",
+  "directory": "resources/",  
   "ignore": [
     "**/.*",
     "node_modules",
@@ -47,10 +47,10 @@
     "Leaflet.MeasureControl": "git://github.com/lmtm/Leaflet.MeasureControl.git#~1.0.2",
     "gulp": "^3.9.1",
     "angular-smart-table": "^2.1.7",
-<<<<<<< HEAD
-    "bootstrap-ui-datetime-picker": "^2.4.2"
-=======
+
+    "bootstrap-ui-datetime-picker": "^2.4.2",
+
     "ngMask": "angular-mask#^3.1.1"
->>>>>>> 319cd899e9349fa976f16f48cb77bf05d5aff64c
+
   }
 }

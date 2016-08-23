@@ -148,15 +148,74 @@
    
 
                 </div>
+        
+    <div id="page-wrapper">
 
-
+    <div class="container-fluid">
+        <div class="row">
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i> Formação Acadêmica Oficiais</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div id="morris-donut-chart"></div>
+                                <div class="text-right">
+                                    <a href="">View Details <i class="fa fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i> Habilitação Idiomas Oficiais</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div id="morris-donut-chart2"></div>
+                                <div class="text-right">
+                                    <a href="">View Details <i class="fa fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i> Habilitação Idiomas Praças</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div id="doughnut1" class="chart chart-doughnut"
+                    chart-data="data" chart-labels="labels"></div>
+                                <div class="text-right">
+                                    <a href="">View Details <i class="fa fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+            <canvas id="doughnut" class="chart chart-doughnut"
+  chart-data="data" chart-labels="labels">
+</canvas> 
+            
+                    
+            
                 </div>
+                <!-- /.row -->               
+    </div>
+</div>
+
+
+</div>
     <!-- Scripts -->
     @if(Config::get('app.debug'))
     <script src="{{ asset('build/js/vendor/jquery.min.js')}}"></script>
     <script src="{{ asset('build/js/vendor/bootstrap.min.js')}}"></script>
     <script src="{{ asset('build/js/vendor/angular.min.js')}}"></script>
     <script src="{{ asset('ngMask.min.js')}}"></script>
+    <script src="{{ asset('angular-chart.min.js')}}"></script>
     <script src="{{ asset('build/js/vendor/angular-route.min.js')}}"></script>
     <script src="{{ asset('build/js/vendor/angular-resource.min.js')}}"></script>
     <script src="{{ asset('build/js/vendor/angular-animate.min.js')}}"></script>

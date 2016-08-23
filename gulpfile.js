@@ -18,6 +18,7 @@ config.vendor_path_js = [
     config.bower_path + '/jquery/dist/jquery.min.js',
     config.bower_path + '/bootstrap/dist/js/bootstrap.min.js',
     config.bower_path + '/angular/angular.min.js',
+    config.bower_path + '/angular-chartjs/angular-chart.min.js',
     config.bower_path + '/angular-animate/angular-animate.min.js',
     config.bower_path + '/angular-bootstrap/ui-bootstrap-tpls.min.js',
     config.bower_path + '/angular-messages/angular-messages.min.js',
