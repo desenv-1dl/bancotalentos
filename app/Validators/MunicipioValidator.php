@@ -15,7 +15,7 @@ class MunicipioValidator extends LaravelValidator
 {
     protected $rules = [
         'nome'                  => 'required|max:255|min:3',
-        'sigla'                 => 'required',
+//        'sigla'                 => 'required',
         'unidade_federacao_id'  => 'required|integer'
     ];
 

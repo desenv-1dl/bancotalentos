@@ -63,8 +63,9 @@
                             <div class="col-md-3">
                                <input type="text" class="form-control" name="custo_atividade" 
                                        ng-model="pessoaAtividade.custo_atividade"
-                                       mask="99.33"
-                                       required>
+                                       placeholder="Ex. 2500.00"
+                                       mask="9999.33"
+                                       >
 
                                 <div ng-messages="form.custo_atividade.$error" class="help-block" ng-show="form.custo_atividade.$touched">
                                     <div ng-message="required">Campo Obrigatório</div>
@@ -76,7 +77,7 @@
                                        ng-model="pessoaAtividade.ano"
                                        placeholder="Ex. 05/12/2016"
                                        mask="39/19/9999"
-                                       required>
+                                       >
 
                                 <div ng-messages="form.ano.$error" class="help-block" ng-show="form.ano.$touched">
                                     <div ng-message="required">Campo Obrigatório</div>
@@ -89,9 +90,9 @@
                             <div class="col-md-3">
                                 <input type="text" class="form-control" name="carga_horaria" 
                                        ng-model="pessoaAtividade.carga_horaria" 
-                                       mask="99999"
-                                       placeholder="Ex. 80"
-                                       required>
+                                       mask="999"
+                                       placeholder="Ex. 080"
+                                       >
                                 <div ng-messages="form.carga_horaria.$error" class="help-block" ng-show="form.carga_horaria.$touched">
                                     <div ng-message="required">Campo Obrigatório</div>
                                 </div>
