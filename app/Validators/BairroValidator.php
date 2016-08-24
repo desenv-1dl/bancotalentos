@@ -15,7 +15,7 @@ class BairroValidator extends LaravelValidator
 {
     protected $rules = [
         'nome'                  => 'required|max:255|min:3',
-        'sigla'                 => 'required',
+//        'sigla'                 => 'required',
         'municipio_id'          => 'required|integer'
     ];
 

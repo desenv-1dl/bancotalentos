@@ -25,7 +25,7 @@
                         <div class="form-group" ng-class="{'has-error' : !form.sigla.$valid && form.sigla.$touched}">
                             <label class="col-md-4 control-label">Sigla</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="sigla" ng-model="bairro.sigla" required>
+                                <input type="text" class="form-control" name="sigla" ng-model="bairro.sigla">
                                 <div ng-messages="form.sigla.$error" class="help-block" ng-show="form.sigla.$touched">
                                     <div ng-message="required">Campo Obrigatório</div>
                                 </div>
