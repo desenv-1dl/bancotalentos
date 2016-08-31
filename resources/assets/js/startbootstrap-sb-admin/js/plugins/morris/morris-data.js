@@ -72,8 +72,13 @@ $(function() {
             value: 08
         }, {
             label: "Oficiais com Doutorado",
-            value: 03
-        }],
+            value: 01
+        },
+            {
+            label: "Sem Mestrado/Doutorado",
+            value: 02
+        }
+        ],
         resize: true
     });
     
@@ -82,16 +87,15 @@ $(function() {
         element: 'morris-donut-chart2',
         data: [{
             label: "Inglês",
-            value: 08
-        }, {
-            label: "Francês",
-            value: 02
-        },{
-            label: "Alemão",
-            value: 03
-        },{
+            value: 04
+        },
+            {
+            label: "Sem Habilitação",
+            value: 05
+        },
+            {
             label: "Espanhol",
-            value: 09
+            value: 02
         }],
         resize: true
     });
@@ -101,17 +105,15 @@ $(function() {
         element: 'morris-donut-chart3',
         data: [{
             label: "Inglês",
-            value: 06
-        }, {
-            label: "Francês",
-            value: 01
-        },{
-            label: "Alemão",
             value: 02
-        },{
+        }, {
             label: "Espanhol",
-            value: 09
-        }],
+            value: 01
+        }, {
+            label: "Sem Habilitação",
+            value: 49
+        }
+        ],
         resize: true
     });
 

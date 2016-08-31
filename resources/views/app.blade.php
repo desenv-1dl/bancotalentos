@@ -149,9 +149,9 @@
 
                 </div>
         
-    <div id="page-wrapper">
+<!--    <div id="page-wrapper">
 
-<!--    <div class="container-fluid">
+    <div class="container-fluid">
         <div class="row">
                     <div class="col-lg-4">
                         <div class="panel panel-default">
@@ -198,8 +198,8 @@
             
                 </div>
                  /.row                
-    </div>-->
-</div>
+    </div>
+</div>-->
 
 
 </div>

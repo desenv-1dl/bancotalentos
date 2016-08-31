@@ -9,8 +9,8 @@ angular.module('app.controllers')
             controller: 'pessoas-atividades',
             enableHiding: true,
             columnDefs: [
-                { field: 'pessoa.data.organizacao.data.nome_abrev', displayName: "OM" },
-                { field: 'pessoa.data.nivelFuncional.data.nome', displayName: "Pessoa" },
+                { field: 'pessoa.data.organizacao.data.nome_abrev', displayName: "Idioma" },
+                { field: 'pessoa.data.nivelFuncional.data.nome', displayName: "Posto/Grad" },
                 { field: 'pessoa.data.nome', displayName: "Pessoa" },
                 { field: 'atividade.data.nome', displayName: "Atividade" },
                 { field: 'instituicao.data.nome', displayName: "Instituição" },
