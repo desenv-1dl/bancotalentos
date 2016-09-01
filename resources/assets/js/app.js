@@ -125,16 +125,16 @@ app.config([
 //            controller: 'HomeController'
 //        })
         .when('/',{
-            templateUrl: 'build/views/index.html',
-            controller: 'IndexController'
+            templateUrl: 'build/views/pessoa/list.html',
+            controller: 'PessoaListController'
         })
         .when('/index',{
-            templateUrl: 'build/views/index.html',
-            controller: 'IndexController'
+            templateUrl: 'build/views/pessoa/list.html',
+            controller: 'PessoaListController'
         })
         .when('/home',{
-            templateUrl: 'build/views/index.html',
-            controller: 'HomeController'
+            templateUrl: 'build/views/pessoa/list.html',
+            controller: 'PessoaListController'
         })
 //        ATIVIDADE
         .when('/atividades',{

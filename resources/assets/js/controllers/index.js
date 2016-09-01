@@ -1,72 +1,42 @@
+angular.module('app.controllers')
+    .controller('IndexController',['$scope', 'index', function($scope, index){
 
-angular.module("app").
-        controller("IndexController",['$scope', '$location', function ($scope, $location) {
-  $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
-  $scope.data = [300, 500, 100];
-}]);
-   
-
-
-//angular.module('app.controllers',['morris, raphael.min'])
-    .controller('IndexController', ['$scope', 'Index', 'Util', 'leafletData',
-        function ($scope, Index, Util,leafletData) {
-
-            $scope.formacao = function () {
-
-   
-
-//    // Donut Chart
-    Morris.Donut({
-        element: 'morris-donut-chart',
-        data: [{
+        $scope.morrisdonutchart = {
+            data: [{
             label: "Oficiais com Mestrado",
             value: 08
         }, {
             label: "Oficiais com Doutorado",
-            value: 03
-        }],
-        resize: true
-    });
-    
-    // Donut Chart
-    Morris.Donut({
-        element: 'morris-donut-chart2',
-        data: [{
-            label: "Inglês",
-            value: 08
-        }, {
-            label: "Francês",
-            value: 02
-        },{
-            label: "Alemão",
-            value: 03
-        },{
-            label: "Espanhol",
-            value: 09
-        }],
-        resize: true
-    });
-    
-    // Donut Chart
-    Morris.Donut({
-        element: 'morris-donut-chart3',
-        data: [{
-            label: "Inglês",
-            value: 06
-        }, {
-            label: "Francês",
             value: 01
-        },{
-            label: "Alemão",
+        },
+            {
+            label: "Sem Mestrado/Doutorado",
             value: 02
-        },{
-            label: "Espanhol",
-            value: 09
-        }],
-        resize: true
-    });
+        }
+        ]
+        
+        };
 
-    ])
-});
-
-    }]);
+//        $scope.gridOptions = {
+//            data : $scope.pessoasAtividades,
+//            enableFiltering: true,
+//            controller: 'pessoas-atividades',
+//            enableHiding: true,
+//            columnDefs: [
+//                { field: 'pessoa.data.organizacao.data.nome_abrev', displayName: "Idioma" },
+//                { field: 'pessoa.data.nivelFuncional.data.nome', displayName: "Nivel Funcional" },
+//                { field: 'pessoa.data.nome', displayName: "Pessoa" },
+//                { field: 'atividade.data.nome', displayName: "Atividade" },
+//                { field: 'instituicao.data.nome', displayName: "Instituição" },
+//                { field: 'acoes', displayName: "Acoes", 
+//                    enableFiltering:  false, enableSorting: false, width: 200,
+//                    cellTemplate : '<menu-acao></menu-acao>'
+//                }
+//            ]
+//        };
+//
+//        $scope.gridOptions.onRegisterApi = function(gridApi){
+//            $scope.gridApi = gridApi;
+//        };
+//
+//    }]);

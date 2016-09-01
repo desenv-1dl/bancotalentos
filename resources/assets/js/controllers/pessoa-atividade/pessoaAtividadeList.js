@@ -10,7 +10,7 @@ angular.module('app.controllers')
             enableHiding: true,
             columnDefs: [
                 { field: 'pessoa.data.organizacao.data.nome_abrev', displayName: "Idioma" },
-                { field: 'pessoa.data.nivelFuncional.data.nome', displayName: "Posto/Grad" },
+                { field: 'pessoa.data.nivelFuncional.data.nome', displayName: "Nivel Funcional" },
                 { field: 'pessoa.data.nome', displayName: "Pessoa" },
                 { field: 'atividade.data.nome', displayName: "Atividade" },
                 { field: 'instituicao.data.nome', displayName: "Instituição" },
